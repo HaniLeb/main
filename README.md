@@ -5,37 +5,42 @@
 Prerequisites: Docker, PHP 8.2, Composer and Symfony installed.
 
 Clone this repository
+
 ```bash
 git clone git@github.com:gBoole01/mspr-paillote-soleil.git
 ```
 
 Go to the directory
+
 ```bash
 cd mspr-paillote-soleil
 ```
 
 Install dependencies
+
 ```bash
 composer install
 ```
 
 Run Docker Containers (`-d` to run it in detach mode)
+
 ```bash
 docker-compose up --build
 ```
 
 Run Symfony Development Server (`-d` to run it in detach mode)
+
 ```bash
 symfony serve
 ```
 
 ### Services
+
 - Symfony Web Server is accessible on `localhost:8000`.
 - PHPmyadmin is accessible on `localhost:8080`.
 - The Mail Catcher is accessible on `localhost:1080`.
 
 _You can test the mailcatcher with `php bin/console mailer:test someone@example.com`_
-
 
 ## Contributors
 
