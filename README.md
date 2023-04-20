@@ -29,9 +29,13 @@ Run Symfony Development Server (`-d` to run it in detach mode)
 symfony serve
 ```
 
+### Services
 - Symfony Web Server is accessible on `localhost:8000`.
 - PHPmyadmin is accessible on `localhost:8080`.
 - The Mail Catcher is accessible on `localhost:1080`.
+
+_You can test the mailcatcher with `php bin/console mailer:test someone@example.com`_
+
 
 ## Contributors
 
