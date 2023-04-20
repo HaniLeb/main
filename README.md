@@ -1,5 +1,7 @@
 # MSPR - La Paillote du Soleil
 
+This project is a fake restaurant website located in the South of France.
+
 ## Installation
 
 Prerequisites: Docker, PHP 8.2, Composer and Symfony installed.
@@ -41,6 +43,12 @@ symfony serve
 - The Mail Catcher is accessible on `localhost:1080`.
 
 _You can test the mailcatcher with `php bin/console mailer:test someone@example.com`_
+
+## Security Disclaimer
+
+This project is for educational purposes only, and any security measures implemented are intended to demonstrate basic security concepts only. The security measures implemented may not be sufficient for use in a production environment, and the user assumes all risk and responsibility for implementing any security measures in a production environment.
+
+Furthermore, any data entered into this project may not be secure, and the user assumes all risk and responsibility for the security of their data. We recommend that users do not enter any sensitive or confidential information into this project.
 
 ## Contributors
 
