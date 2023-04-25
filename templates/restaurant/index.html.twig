@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RestaurantController!{% endblock %}
+
+{% block body %}
+
+<main>
+<section class="presentation">
+<img src="https://www.lespaillotesoleil.com/wp-content/uploads/2019/03/IMG_20190301_153000-1.jpg" alt="image de la paillote" width="100%" height="100%">
+<div>
+    <h1>Présentation de la Paillote du Soleil</h1>
+    <p>La Paillote Soleil est un restaurant situé à Sainte-Maxime, dans le Var. Nous vous proposons une cuisine traditionnelle et de saison, avec des produits frais et locaux. Nous vous accueillons dans un cadre chaleureux et convivial, avec une vue imprenable sur la mer.</p>
+    <p>Créé au debut du siecle, sous le nom de francis, elle renait suite à une explosion malheureuse sous le nom de la paillote du soleil .</p>
+    <p>Aujourd'hui, fort d'une renommée régionale, la rénovation complète de l'établissement en 2020 nous permet désormais d'offrir à notre clientel une expérience exeptionnel.</p>
+</div>
+<div>
+    <h1>carrousel</h1>
+
+</div>
+</section>
+
+<section class="laCarte">
+<article class="Entree">
+<div> <p>titre soupe tomate</p> 
+<img id="faitMaison" src="iconeFaitMaison.jpg" alt="icone faitMaison" width="2em" height="2em">
+<img id="platVege" src="iconeVégé.jpg" alt="icone vege" width="2em" height="2em">
+<img id="platgluten" src="iconeGluten.jpg" alt="icone Gluten" width="2em" height="2em">
+<div>
+    <p>description soupe tomate</p>
+    <img id="entree?" src="?.jpg" alt="?" width="5em" height="5em">
+</div>
+</div>
+
+<article class="plat">
+<div> <p>titre soupe tomate</p> 
+<img id="faitMaison" src="iconeFaitMaison.jpg" alt="icone faitMaison" width="2em" height="2em">
+<img id="platVege" src="iconeVégé.jpg" alt="icone vege" width="2em" height="2em">
+<img id="platgluten" src="iconeGluten.jpg" alt="icone Gluten" width="2em" height="2em">
+<div>
+    <p>description soupe tomate</p>
+    <img id="plat?" src="?.jpg" alt="?" width="5em" height="5em">
+</div>
+</div>
+
+<article class="dessert">
+<div> <p>titre soupe tomate</p> 
+<img id="faitMaison" src="iconeFaitMaison.jpg" alt="icone faitMaison" width="2em" height="2em">
+<img id="platVege" src="iconeVégé.jpg" alt="icone vege" width="2em" height="2em">
+<img id="platgluten" src="iconeGluten.jpg" alt="icone Gluten" width="2em" height="2em">
+<div>
+    <p>description soupe tomate</p>
+    <img id="dessert?" src="?.jpg" alt="?" width="5em" height="5em">
+</div>
+</div>
+
+</section>
+<section class="menu">
+<a href= " ">réserver</a>
+<div> <p>Menu 1</p><p>18€</p>
+<div>
+    <p>entree + plat ou plat + dessert</p>
+    <p>boissons en complement</p>
+    <img id="Menu" src="img/formule1.jpg" alt="" width="5em" height="5em">
+</div>
+
+<div> <p>Menu 2</p><p>23€</p>
+<div>
+    <p>entree + plat + dessert</p>
+    <p>boissons en complement, café offert</p>
+    <img id="Menu" src="img/formule2.jpg" alt="" width="5em" height="5em">
+</div>
+
+<div> <p>Menu enfant</p><p>8€</p>
+<div>
+    <p>panée de poulet, frites </p>
+    <p>boissons en complement</p>
+    <img id="Menu" src="img/menuEnfant.jpg" alt="" width="5em" height="5em">
+</div>
+
+</section>
+
+
+<section class="traiteur">
+<a href= " ">demandez un devis</a>
+<div> <p>formule 1</p><p>dès15€/pers.</p>
+<div>
+    <p>Les Services:</p>
+    <p>Menu au choix</p>
+    <p>Buffet</p>
+    <p>Livraison</p>
+    <p>location de matèriel</p>
+    <img id="traiteur1" src="img/traiteur8.jpg" alt="" width="5em" height="5em">
+    <img id="traiteur" src="img/traiteur2.jpg" alt="" width="5em" height="5em">
+    <img id="traiteur" src="img/traiteur3.jpg" alt="" width="5em" height="5em">
+    <img id="traiteur" src="img/traiteur4.jpg" alt="" width="5em" height="5em">
+</div>
+
+<div> <p>formule 2</p><p>23€</p><p>dès 30€/pers.</p>
+<div>
+    <p>Les Services:</p>
+    <p>Menu au choix</p>
+    <p>Buffet</p>
+    <p>Livraison</p>
+    <p>location de matèriel</p>
+    <img id="traiteur1" src="img/traiteur5.jpg" alt="" width="5em" height="5em">
+    <img id="traiteur" src="img/traiteur6.jpeg" alt="" width="5em" height="5em">
+    <img id="traiteur" src="img/traiteur7.jpg" alt="" width="5em" height="5em">
+    <img id="traiteur" src="img/traiteur1.jpeg" alt="" width="5em" height="5em">
+</div>
+
+
+
+</section>
+
+
+
+
+main
+section article
+footer
+</main>
+
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/catus/OneDrive/Documents/symfony/mspr-paillote-soleil/src/Controller/RestaurantController.php'|file_link(0) }}">src/Controller/RestaurantController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/catus/OneDrive/Documents/symfony/mspr-paillote-soleil/templates/restaurant/index.html.twig'|file_link(0) }}">templates/restaurant/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
