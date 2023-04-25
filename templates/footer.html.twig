@@ -1,0 +1,22 @@
+<footer>
+    <p>Inscrivez-vous à notre newsletter pour ne manquer aucune actualité</p>
+    <form action="" method="POST">
+        <input type="text" placeholder="email@example.com">
+        <button type="submit">S'inscrire</button>
+    </form>
+    <menu>
+        <a href="{{ path('app_home') }}">Actualités</a>
+        <a href="{{ path('app_home') }}">Services</a>
+        <a href="{{ path('app_home') }}">Restaurant</a>
+        <a href="{{ path('app_home') }}">Réservations</a>
+        <a href="{{ path('app_home') }}">Mentions Légales</a>
+        <a href="{{ path('app_home') }}">CGU/CGV</a>
+    </menu>
+    <div>
+        <a href="{{ path('app_home') }}">
+            <img src="favicon-32x32.png" alt="Logo">
+        </a>
+        <h6>La Paillote du Soleil</h6>
+    </div>
+    <p>&copy; {{ "now"|date("Y") }} MSPR Team 1. Tous droits réservés</p>
+</footer>
