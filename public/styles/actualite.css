@@ -77,7 +77,7 @@ select {
 
 .actualite-container {
   margin: auto;
-  width: 85%;
+  width: 95%;
 }
 
 /* HERO SECTION */
@@ -85,9 +85,17 @@ select {
 .actualite-hero-section {
   background-image: url("../img/terrasseResto.jpg");
   background-size: cover;
+  background-position: center;
   width: 100%;
   color: white;
-  height: 500px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 0.8rem;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
 .h1-hero-section {
@@ -96,11 +104,22 @@ select {
   border-radius: 10px;
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  font-size: 4rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .actualite-btn {
   color: white;
   background-color: #187498;
-  font-size: 2rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border-style: none;
+}
+
+.btn-reserver {
+  position: absolute;
+  bottom: -1.1rem;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
