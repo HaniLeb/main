@@ -1,10 +1,20 @@
 {% extends 'base.html.twig' %}
 
+{# SEO BLOCKS #}
+{# {% block page_url %}{% endblock %} #}
+{% block featured_image %}/img/terrasseRestoNuit.jpg{% endblock %}
+{# {% block og_type %}{% endblock %} #}
+{% block extra_keywords %}réserver table couverts{% endblock %}
+
 {% block title %}Réservations{% endblock %}
+{% block description %}Réserver une table à la Paillote du Soleil. Profitez d'une terrasse dôtée d'une vue
+époustouflante en réservant une table chez nous.{% endblock %}
+
 
 {% block body %}
 <img src="/img/terrasseRestoNuit.jpg" alt="">
 <h1>Réserver une table</h1>
+{{form(form)}}
 <div>Booking Form goes here</div>
 <h2>Où nous trouver ?</h2>
 <img src="/img/map.png" alt="">
