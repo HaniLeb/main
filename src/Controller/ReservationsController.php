@@ -11,6 +11,8 @@ class ReservationsController extends AbstractController
     #[Route('/reservations', name: 'app_reservations')]
     public function index(): Response
     {
-        return $this->render('reservations/index.html.twig', []);
+        // TODO: Handle form submission
+        $form = $this->createForm(ReservationType::class);
+        return $this->render('reservations/index.html.twig', ['form' => $form]);
     }
 }
