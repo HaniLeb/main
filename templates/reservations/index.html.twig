@@ -14,8 +14,7 @@
 {% block body %}
 <img src="/img/terrasseRestoNuit.jpg" alt="">
 <h1>Réserver une table</h1>
-{{form(form)}}
-<div>Booking Form goes here</div>
+{{ form(booking_form) }}
 <h2>Où nous trouver ?</h2>
 <img src="/img/map.png" alt="">
 <div>
@@ -41,6 +40,6 @@
     <p>Français / Anglais / Espagnol</p>
 </div>
 <h2>Contact</h2>
-<div>Contact Form goes here</div>
+{{ form(contact_form) }}
 
 {% endblock %}
