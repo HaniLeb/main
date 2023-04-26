@@ -1,32 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" href="styles/main.css">
 
-        <title>{% block title %}{% endblock %} | La paillote du Soleil</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
 
-        {% block extra_stylesheets %}{% endblock %}
+    {# Fonts #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+    {# Favicon #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    {# Stylesheets #}
+    <link rel="stylesheet" href="styles/main.css">
+    {% block extra_stylesheets %}{% endblock %}
+
+    {# Scripts #}
+    {% block extra_javascripts %}{% endblock %}
+
+    {# SEO #}
+    <meta name="robots" content="index, follow">
+    <title>{% block title %}{% endblock %} | La paillote du Soleil</title>
+    <meta name="description"
+        content="{% block description %}Restaurant Gastronomique avec terrasse exceptionnelle sur la plage de Valras{% endblock %}">
+    <meta name="keywords"
+        content="restaurant gastronomique terrasse valras plage{% block extra_keywords %}{% endblock %}">
+    <link rel="canonical" href="{% block page_url %}{% endblock %}">
+
+    {# Open Graph #}
+    <meta property="og:title" content="{{ block('title')}} | La paillote du Soleil">
+    <meta property="og:description" content="{{ block('description') }}">
+    <meta property="og:image" content="{% block featured_image %}{% endblock %}">
+    <meta property="og:url" content="{{ block('page_url') }}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:site_name" content="La paillote du Soleil">
+
+    {# JSON-LD #}
+    <script type="application/ld+json">
+    {% block json_ld %}
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebPage",
+        "name": "{{ block('title')}} | La paillote du Soleil",
+        "description": "{{ block('description') }}",
+        "url": "{{ block('page_url') }}",
+        "image": "terrasseRestoSun.jpg",
+        "publisher": {
+            "@type": "Organization",
+            "name": "La paillote du Soleil",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon-32x32.png",
+                "width": "32",
+                "height": "32"
+            }
+            },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ block('page_url') }}"
+        }
+    }
+    {% endblock %}
+    </script>
+
+</head>
+
+<body>
+    {% include 'header.html.twig' %}
+    {% block body %}{% endblock %}
+    {% include 'footer.html.twig' %}
+</body>
+
 </html>
