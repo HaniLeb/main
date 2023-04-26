@@ -10,3 +10,12 @@ h1, p{
         padding-bottom: 3%;
     }
 }
+
+@media screen and (min-width: 1000px) {
+    
+    h1, p{
+        width: 50%;
+        margin: 0 auto;
+        padding-bottom: 3%;
+    }
+}
