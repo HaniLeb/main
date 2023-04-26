@@ -1,0 +1,11 @@
+.reservations-hero-section {
+  background-image: url("../img/terrasseRestoNuit.jpg");
+}
+
+.reservations-hero-section h1 {
+  opacity: 0;
+}
+
+.reservations-hero-section form {
+  display: grid;
+}
