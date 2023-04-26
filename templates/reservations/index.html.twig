@@ -1,143 +1,142 @@
 {% extends 'base.html.twig' %}
 
-<<<<<<< HEAD {% block extra_stylesheets %} <link rel="stylesheet" href="styles/reservations.css">
-    {% endblock %}
+{% block extra_stylesheets %}
+<link rel="stylesheet" href="styles/reservations.css">
+{% endblock %}
 
-    =======
-    >>>>>>> 590d6ab (feat: add Booking)
-    {# SEO BLOCKS #}
-    {# {% block page_url %}{% endblock %} #}
-    {% block featured_image %}/img/terrasseRestoNuit.jpg{% endblock %}
-    {# {% block og_type %}{% endblock %} #}
-    {% block extra_keywords %}réserver table couverts{% endblock %}
+{# SEO BLOCKS #}
+{# {% block page_url %}{% endblock %} #}
+{% block featured_image %}/img/terrasseRestoNuit.jpg{% endblock %}
+{# {% block og_type %}{% endblock %} #}
+{% block extra_keywords %}réserver table couverts{% endblock %}
 
-    {% block title %}Réservations{% endblock %}
-    {% block description %}Réserver une table à la Paillote du Soleil. Profitez d'une terrasse dôtée d'une vue
-    époustouflante en réservant une table chez nous.{% endblock %}
-
-
-    {% block body %}
-    <section class="reservations-hero-section">
-        <h1>Réserver une table</h1>
-        {{ form_start(booking_form) }}
-        {{ form_errors(booking_form) }}
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(booking_form.date) }}
-            </div>
-            <div class="input">
-                {{ form_widget(booking_form.date) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(booking_form.nbPlaces) }}
-            </div>
-            <div class="input">
-                {{ form_widget(booking_form.nbPlaces) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(booking_form.name) }}
-            </div>
-            <div class="input">
-                {{ form_widget(booking_form.name) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(booking_form.email) }}
-            </div>
-            <div class="input">
-                {{ form_widget(booking_form.email) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(booking_form.phone) }}
-            </div>
-            <div class="input">
-                {{ form_widget(booking_form.phone) }}
-            </div>
-        </div>
-        <button type="submit">Réserver</button>
-        {{ form_end(booking_form) }}
-    </section>
-    <section class="reservations-infos-section">
-        <h2>Où nous trouver ?</h2>
-        <img src="/img/map.png" alt="">
-        <div>
-            <h3>Addresse</h3>
-            <p>14 Av. des Elysées</br>34350 Valras-Plage</p>
-            <h3>Parking</h3>
-            <p>2 Pl. du Languedoc</br> 34350 Valras-Plage</p>
-            <h3>Accès</h3>
-            <p>Bus 3, E</br>Arrêt Elysées</p>
-            <h3>Téléphone</h3>
-            <p>04.03.02.01.05</p>
-            <h3>Horaires</h3>
-            <p>12h-2h</p>
-            <h3>Email</h3>
-            <p>contact@la-paillote-du-soleil.fr</p>
-            <h3>Réseaux sociaux</h3>
-            <p>Facebook / Instagram / TikTok</p>
-            <h3>Moyens de paiement</h3>
-            <p>CB / Titres Restaurant / Espèces</p>
-            <h3>Cartes acceptées</h3>
-            <p>Amex / Visa / Mastercard</p>
-            <h3>Langues parlées</h3>
-            <p>Français / Anglais / Espagnol</p>
-        </div>
-    </section>
-    <section class="reservations-contact-section">
-        <h2>Contact</h2>
-
-        {{ form_start(contact_form) }}
-        {{ form_errors(contact_form) }}
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(contact_form.type) }}
-            </div>
-            <div class="input">
-                {{ form_widget(contact_form.type) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(contact_form.name) }}
-            </div>
-            <div class="input">
-                {{ form_widget(contact_form.name) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(contact_form.email) }}
-            </div>
-            <div class="input">
-                {{ form_widget(contact_form.email) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(contact_form.phone) }}
-            </div>
-            <div class="input">
-                {{ form_widget(contact_form.phone) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="label">
-                {{ form_label(contact_form.message) }}
-            </div>
-            <div class="input">
-                {{ form_widget(contact_form.message) }}
-            </div>
-        </div>
-        <button type="submit">Envoyer</button>
-        {{ form_end(contact_form) }}
-    </section>
+{% block title %}Réservations{% endblock %}
+{% block description %}Réserver une table à la Paillote du Soleil. Profitez d'une terrasse dôtée d'une vue
+époustouflante en réservant une table chez nous.{% endblock %}
 
 
-    {% endblock %}
+{% block body %}
+<section class="reservations-hero-section">
+    <h1>Réserver une table</h1>
+    {{ form_start(booking_form) }}
+    {{ form_errors(booking_form) }}
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(booking_form.date) }}
+        </div>
+        <div class="input">
+            {{ form_widget(booking_form.date) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(booking_form.nbPlaces) }}
+        </div>
+        <div class="input">
+            {{ form_widget(booking_form.nbPlaces) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(booking_form.name) }}
+        </div>
+        <div class="input">
+            {{ form_widget(booking_form.name) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(booking_form.email) }}
+        </div>
+        <div class="input">
+            {{ form_widget(booking_form.email) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(booking_form.phone) }}
+        </div>
+        <div class="input">
+            {{ form_widget(booking_form.phone) }}
+        </div>
+    </div>
+    <button type="submit">Réserver</button>
+    {{ form_end(booking_form) }}
+</section>
+<section class="reservations-infos-section">
+    <h2>Où nous trouver ?</h2>
+    <img src="/img/map.png" alt="">
+    <div>
+        <h3>Addresse</h3>
+        <p>14 Av. des Elysées</br>34350 Valras-Plage</p>
+        <h3>Parking</h3>
+        <p>2 Pl. du Languedoc</br> 34350 Valras-Plage</p>
+        <h3>Accès</h3>
+        <p>Bus 3, E</br>Arrêt Elysées</p>
+        <h3>Téléphone</h3>
+        <p>04.03.02.01.05</p>
+        <h3>Horaires</h3>
+        <p>12h-2h</p>
+        <h3>Email</h3>
+        <p>contact@la-paillote-du-soleil.fr</p>
+        <h3>Réseaux sociaux</h3>
+        <p>Facebook / Instagram / TikTok</p>
+        <h3>Moyens de paiement</h3>
+        <p>CB / Titres Restaurant / Espèces</p>
+        <h3>Cartes acceptées</h3>
+        <p>Amex / Visa / Mastercard</p>
+        <h3>Langues parlées</h3>
+        <p>Français / Anglais / Espagnol</p>
+    </div>
+</section>
+<section class="reservations-contact-section">
+    <h2>Contact</h2>
+
+    {{ form_start(contact_form) }}
+    {{ form_errors(contact_form) }}
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(contact_form.type) }}
+        </div>
+        <div class="input">
+            {{ form_widget(contact_form.type) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(contact_form.name) }}
+        </div>
+        <div class="input">
+            {{ form_widget(contact_form.name) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(contact_form.email) }}
+        </div>
+        <div class="input">
+            {{ form_widget(contact_form.email) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(contact_form.phone) }}
+        </div>
+        <div class="input">
+            {{ form_widget(contact_form.phone) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="label">
+            {{ form_label(contact_form.message) }}
+        </div>
+        <div class="input">
+            {{ form_widget(contact_form.message) }}
+        </div>
+    </div>
+    <button type="submit">Envoyer</button>
+    {{ form_end(contact_form) }}
+</section>
+
+
+{% endblock %}
