@@ -72,3 +72,68 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/*NavBar css */
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-bottom: 1px solid red;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+} 
+
+img {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-right: 20px;
+}
+
+span {
+  font-size: 15px;
+  font-family: 'Raleway';
+  letter-spacing: 5px;
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  display: flex;
+  font-family: 'Raleway';
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-left: 20px;
+}
+
+ul li:first-child {
+  margin-left: 0px; 
+}
+
+ul li a {
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+}
+
+@media (max-width: 744px){
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 5px 20px;
+    border-bottom: 1px solid red;
+  }
+}
