@@ -12,10 +12,13 @@ class BookingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $currentDate = new \DateTime();
+        $currentDate->setTime(12, 0);
+
         $builder
             ->add('date', type: DateTimeType::class, options: [
                 'label' => 'Date',
-                'data' => new \DateTime(),
+                'data' => $currentDate,
                 'required' => true,
             ])
             ->add('nbPlaces', options: [
@@ -35,7 +38,7 @@ class BookingType extends AbstractType
             ])
             ->add('phone', options: [
                 'label' => 'Téléphone',
-                'attr' => ['placeholder' => 'Votre numéro de téléphone'],
+                'attr' => ['placeholder' => '0607080910'],
                 'required' => true,
             ]);
     }
