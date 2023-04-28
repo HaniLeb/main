@@ -12,8 +12,8 @@
 
 <main>
     <section class="presentation">
-        <img src="/img/terrasseRestoSun.jpg" alt="image de la paillote" width="500px">
-        <div>
+        <img class="banniere" src="/img/terrasseRestoSun.jpg" alt="image de la paillote" width="500px">
+        <div class="textePresentation">
             <h1>Présentation de la Paillote du Soleil</h1>
             <p>La Paillote Soleil est un restaurant situé à Sainte-Maxime, dans le Var. Nous vous proposons une cuisine
                 traditionnelle et de saison, avec des produits frais et locaux. Nous vous accueillons dans un cadre
@@ -23,8 +23,33 @@
             <p>Aujourd'hui, fort d'une renommée régionale, la rénovation complète de l'établissement en 2020 nous permet
                 désormais d'offrir à notre clientel une expérience exeptionnel.</p>
         </div>
-        <div>
+        <div class="carrousel">
             <h1>carrousel</h1>
+            <div class="slide-container">
+                <div class="custom-slider fade">
+                  <div class="slide-index">1 / 3</div>
+                  <img class="slide-img" src="/img/salle resto.jpg">
+                  <div class="slide-text">Espace végétalisé, un appel à la sérénité.</div>
+                </div>
+                <div class="custom-slider fade">
+                  <div class="slide-index">2 / 3</div>
+                  <img class="slide-img" src="/img/terrasseRestoNuit.jpg">
+                  <div class="slide-text">Relaxer vous! Vous êtes chez vous!  </div>
+                </div>
+                <div class="custom-slider fade">
+                  <div class="slide-index">3 / 3</div>
+                  <img class="slide-img" src="/img/restoNuit.jpg">
+                  <div class="slide-text">Profitez de la fraicheur nocture</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <br>
+              <div class="slide-dot">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+              </div>
 
         </div>
     </section>
@@ -97,7 +122,7 @@
                     <div class="card-body collapse">
                         <p>{{ plat.ingredients }}</p>
                         <p>{{ plat.suggestion }}</p>
-                        <p>{{ plat.image }}</p>
+                        <p><img class="imagePlat" src="/img/{{ plat.image }}"> </p>
 
 
                     </div>
@@ -141,69 +166,122 @@
     </section>
     <section class="menu">
         <a href=" ">réserver</a>
-        <div>
-            <p>Menu 1</p>
-            <p>18€</p>
-            <div>
-                <p>entree + plat ou plat + dessert</p>
-                <p>boissons en complement</p>
-                <img id="Menu" src="img/formule1.jpg" alt="" width="20em" height="20em">
-            </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="icone">
+                    <h3>Menu 1</h3>
 
-            <div>
-                <p>Menu 2</p>
-                <p>23€</p>
-                <div>
-                    <p>entree + plat + dessert</p>
-                    <p>boissons en complement, café offert</p>
-                    <img id="Menu" src="img/formule2.jpg" alt="" width="20em" height="20em">
+                </div>
+                <div class="prix">
+                    <p>18€</p>
                 </div>
 
-                <div>
-                    <p>Menu enfant</p>
-                    <p>8€</p>
-                    <div>
-                        <p>panée de poulet, frites </p>
-                        <p>boissons en complement</p>
-                        <img id="Menu" src="img/menuEnfant.jpg" alt="" width="20em" height="20em">
-                    </div>
+            </div>
+            <div class="card-body collapse">
+                <p>entree + plat + dessert</p>
+                <p>boissons en complement, café offert</p>
+                <p><img id="Menu" src="img/formule1.jpg" alt="" width="50px" height="50px"> </p>
 
+
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <div class="card-header">
+                <div class="icone">
+                    <h3>Menu 2</h3>
+
+                </div>
+                <div class="prix">
+                    <p>23€</p>
+                </div>
+
+            </div>
+            <div class="card-body collapse">
+                <p>entree + plat</p> <br>
+                <p>ou</p> <br>
+                <p>plat+ dessert</p>
+                <p>un verre de vin et un café offerts</p>
+                <p><img id="Menu" src="img/formule1.jpg" alt="" width="50px" height="50px"> </p>
+
+
+            </div>
+        </div>
     </section>
 
 
     <section class="traiteur">
         <a href=" ">demandez un devis</a>
-        <div>
-            <p>formule 1</p>
-            <p>dès15€/pers.</p>
-            <div>
-                <p>Les Services:</p>
-                <p>Menu au choix</p>
-                <p>Buffet</p>
-                <p>Livraison</p>
-                <p>location de matèriel</p>
-                <img id="traiteur1" src="img/traiteur8.jpg" alt="" width="20em" height="20em">
-                <img id="traiteur" src="img/traiteur2.jpg" alt="" width="20em" height="20em">
-                <img id="traiteur" src="img/traiteur3.jpg" alt="" width="20em" height="20em">
-                <img id="traiteur" src="img/traiteur4.jpg" alt="" width="20em" height="20em">
-            </div>
 
-            <div>
-                <p>formule 2</p>
-                <p>23€</p>
-                <p>dès 30€/pers.</p>
+        <div class="card">
+            <div class="card-header">
+                <div class="icone">
+                    <h3>formule 1</h3>
+
+                </div>
+                <div class="prix">
+                    <p>dès15€/pers.</p>
+                </div>
+
+            </div>
+            <div class="card-body collapse">
+                <div>
+                    <img id="traiteur1" src="img/traiteur8.jpg" alt="" width="20em" height="20em">
+                    <img id="traiteur" src="img/traiteur2.jpg" alt="" width="20em" height="20em">
+                </div>
                 <div>
                     <p>Les Services:</p>
                     <p>Menu au choix</p>
                     <p>Buffet</p>
                     <p>Livraison</p>
                     <p>location de matèriel</p>
-                    <img id="traiteur1" src="img/traiteur5.jpg" alt="" width="20em" height="20em">
-                    <img id="traiteur" src="img/traiteur6.jpeg" alt="" width="20em" height="20em">
-                    <img id="traiteur" src="img/traiteur7.jpg" alt="" width="20em" height="20em">
-                    <img id="traiteur" src="img/traiteur1.jpeg" alt="" width="20em" height="20em">
+                </div>
+                <div>
+                    <img id="traiteur" src="img/traiteur3.jpg" alt="" width="20em" height="20em">
+                    <img id="traiteur" src="img/traiteur4.jpg" alt="" width="20em" height="20em">
                 </div>
 
+
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <div class="card-header">
+                <div class="icone">
+                    <h3>formule 2</h3>
+
+                </div>
+                <div class="prix">
+                    <p>dès 30€/pers.</p>
+                </div>
+
+            </div>
+            <div class="card-body collapse">
+                <div>
+                    <img id="traiteur1" src="img/traiteur8.jpg" alt="" width="20em" height="20em">
+                    <img id="traiteur" src="img/traiteur2.jpg" alt="" width="20em" height="20em">
+                </div>
+                <div>
+                    <p>Les Services:</p>
+                    <p>Menu au choix</p>
+                    <p>mise à disposition de personnel</p>
+                    <p>un référent operationnel</p>
+                    <p>service à table</p>
+                    <p>location de matèriel</p>
+                    <p>gestion des déchets et évacuation des locations</p>
+                </div>
+                <div>
+                    <img id="traiteur" src="img/traiteur3.jpg" alt="" width="20em" height="20em">
+                    <img id="traiteur" src="img/traiteur4.jpg" alt="" width="20em" height="20em">
+                </div>
+
+
+            </div>
+        </div>
 
 
     </section>
