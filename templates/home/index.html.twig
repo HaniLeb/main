@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block extra_stylesheets %}
-<link rel="stylesheet" href="styles/homepage.css">
-{% endblock %}
+{% block extra_stylesheets %} <link rel="stylesheet" href="styles/homepage.css"> {% endblock %}
 
 {# SEO BLOCKS #}
 {# {% block page_url %}{% endblock %} #}
@@ -14,5 +12,34 @@
 {# {% block description %}{% endblock %} #}
 
 {% block body %}
-<h1>Hello World !</h1>
+    <section class="hero">
+        <div class="top">
+            <h1>Bienvenue sur le site de la paillote</h1>
+            <a {#href="{{ path('app_home') }}"#} class="link">Test</a>
+        </div>
+
+            <a {#href="{{ path('app_home') }}"#} class="btn-bottom">Test</a>
+    </section>
+
+    <main>
+        <section class="sect1">
+            <div class="div1">Nos Actualités</div>
+            <a {#href="{{ path('app_actualite') }}"#} class="link">Nos Actualités</a>
+        </section>
+
+        <section class="sect2">
+            <div class="div2">Nos Services</div>
+            <a href="{{ path('app_services') }}" class="link">Nos Services</a>
+        </section>
+
+        <section class="sect3">
+            <div class="div3">Notre Restaurant</div>
+            <a href="{{ path('app_restaurant') }}" class="link">Notre Restaurant</a>
+        </section>
+
+        <section class="sect4">
+            <div class="div4">Réserver</div>
+            <a {#href="{{ path('app_reservations') }}"#} class="link">Réserver</a>
+        </section>
+    </main>
 {% endblock %}

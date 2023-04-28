@@ -2,15 +2,21 @@
 section{
     margin-top: 5%;
     margin-bottom: 5%;
+    padding: 1%;
 }
 
 h1{
     text-transform: uppercase;
     text-align: center;
+    font-family: "Raleway";
 }
 
 h2{
     text-align: center;
+}
+
+h2, p{
+  font-family: "Playfair Display";
 }
 
 div div img{
