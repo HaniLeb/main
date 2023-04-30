@@ -15,9 +15,9 @@ class ContactType extends AbstractType
         $builder
             ->add('type', ChoiceType::class, [
                 'choices' => [
-                    'Question' => 'question',
-                    'Traiteur' => 'booking',
-                    'Evenements' => 'events',
+                    'Demande d\'informations' => 'information',
+                    'Evenement' => 'event',
+                    'Traiteur' => 'catering',
                 ],
                 'placeholder' => 'Choisissez un motif de contact',
                 'required' => true,

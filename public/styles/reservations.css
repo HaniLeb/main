@@ -9,7 +9,7 @@
 }
 
 .reservations-hero-section form {
-  font-family: Playfair Display;
+  font-family: Raleway;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(2px);
   border-radius: 10px;
@@ -23,7 +23,8 @@
   gap: 1rem;
 }
 
-.reservations-hero-section form .form-group {
+.reservations-hero-section form .form-group,
+.reservations-contact-section form .form-group {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -31,8 +32,25 @@
 }
 
 .reservations-hero-section input,
-.reservations-hero-section select {
+.reservations-hero-section select,
+.reservations-contact-section input,
+.reservations-contact-section select {
   border-radius: 5px;
+}
+
+.reservations-hero-section label,
+.reservations-contact-section label {
+  font-weight: bold;
+}
+
+.reservations-hero-section input,
+.reservations-contact-section input {
+  font-size: 1.5rem;
+}
+
+.reservations-hero-section select,
+.reservations-contact-section select {
+  font-size: 1.5rem;
 }
 
 .reservations-hero-section button {
@@ -51,10 +69,11 @@
 }
 
 .reservations-infos-section {
-  margin: 3rem auto;
+  margin: 3rem auto 0;
 }
 
-.reservations-infos-section h2 {
+.reservations-infos-section h2,
+.reservations-contact-section h2 {
   margin-left: 1.5rem;
 }
 .reservations-infos-section img {
@@ -146,12 +165,6 @@
   display: block;
 }
 
-/* TODO: 
-  - Spacing between headings
-
-  - Contact Form
-*/
-
 @media (min-width: 744px) {
   .reservations-hero-section form {
     width: 50%;
@@ -161,4 +174,38 @@
     width: 90%;
     margin: 3rem auto;
   }
+}
+
+.reservations-contact-section {
+  background-color: #eb5353;
+  padding: 3rem 0;
+}
+.reservations-contact-section form {
+  font-family: Raleway;
+  padding: 20px;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reservations-contact-section form > .form-group:nth-of-type(5) > .input {
+  align-self: stretch;
+}
+
+.reservations-contact-section button {
+  width: 40%;
+  font-family: Raleway;
+  letter-spacing: 5px;
+}
+
+.reservations-contact-section textarea {
+  width: 40%;
+  resize: none;
+  border-radius: 5px;
+  min-width: 300px;
+  width: 100%;
+  min-height: 170px;
 }
