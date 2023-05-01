@@ -36,6 +36,7 @@
 .reservations-contact-section input,
 .reservations-contact-section select {
   border-radius: 5px;
+  font-size: 1.5rem;
 }
 
 .reservations-hero-section label,
@@ -43,14 +44,12 @@
   font-weight: bold;
 }
 
-.reservations-hero-section input,
-.reservations-contact-section input {
-  font-size: 1.5rem;
-}
-
-.reservations-hero-section select,
-.reservations-contact-section select {
-  font-size: 1.5rem;
+.reservations-hero-section form .error,
+.reservations-contact-section form .error {
+  color: red;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  text-align: center;
 }
 
 .reservations-hero-section button {
@@ -205,6 +204,7 @@
   width: 40%;
   resize: none;
   border-radius: 5px;
+  font-size: 1.5rem;
   min-width: 300px;
   width: 100%;
   min-height: 170px;

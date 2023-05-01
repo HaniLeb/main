@@ -19,7 +19,6 @@
 <section class="reservations-hero-section">
     <h1>Réserver une table</h1>
     {{ form_start(booking_form) }}
-    {{ form_errors(booking_form) }}
     <div class="form-group">
         <div class="label">
             {{ form_label(booking_form.date) }}
@@ -27,6 +26,11 @@
         <div class="input">
             {{ form_widget(booking_form.date) }}
         </div>
+        {% if form_errors(booking_form.date) %}
+        <div class="error">
+            {{ form_errors(booking_form.date) }}
+        </div>
+        {% endif %}
     </div>
     <div class="form-group">
         <div class="label">
@@ -35,6 +39,12 @@
         <div class="input">
             {{ form_widget(booking_form.nbPlaces) }}
         </div>
+        {% if form_errors(booking_form.nbPlaces) %}
+        <div class="error">
+            {{ form_errors(booking_form.nbPlaces) }}
+        </div>
+        {% endif %}
+
     </div>
     <div class="form-group">
         <div class="label">
@@ -43,6 +53,12 @@
         <div class="input">
             {{ form_widget(booking_form.name) }}
         </div>
+        {% if form_errors(booking_form.name) %}
+        <div class="error">
+            {{ form_errors(booking_form.name) }}
+        </div>
+        {% endif %}
+
     </div>
     <div class="form-group">
         <div class="label">
@@ -51,6 +67,12 @@
         <div class="input">
             {{ form_widget(booking_form.email) }}
         </div>
+        {% if form_errors(booking_form.email) %}
+        <div class="error">
+            {{ form_errors(booking_form.email) }}
+        </div>
+        {% endif %}
+
     </div>
     <div class="form-group">
         <div class="label">
@@ -59,6 +81,12 @@
         <div class="input">
             {{ form_widget(booking_form.phone) }}
         </div>
+        {% if form_errors(booking_form.phone) %}
+        <div class="error">
+            {{ form_errors(booking_form.phone) }}
+        </div>
+        {% endif %}
+
     </div>
     <button type="submit">Réserver</button>
     {{ form_end(booking_form) }}
@@ -1042,7 +1070,6 @@
 <section class="reservations-contact-section">
     <h2>Contact</h2>
     {{ form_start(contact_form) }}
-    {{ form_errors(contact_form) }}
     <div class="form-group">
         <div class="label">
             {{ form_label(contact_form.type) }}
@@ -1050,6 +1077,11 @@
         <div class="input">
             {{ form_widget(contact_form.type) }}
         </div>
+        {% if form_errors(contact_form.type) %}
+        <div class="error">
+            {{ form_errors(contact_form.type) }}
+        </div>
+        {% endif %}
     </div>
     <div class="form-group">
         <div class="label">
@@ -1058,6 +1090,11 @@
         <div class="input">
             {{ form_widget(contact_form.name) }}
         </div>
+        {% if form_errors(contact_form.name) %}
+        <div class="error">
+            {{ form_errors(contact_form.name) }}
+        </div>
+        {% endif %}
     </div>
     <div class="form-group">
         <div class="label">
@@ -1066,6 +1103,11 @@
         <div class="input">
             {{ form_widget(contact_form.email) }}
         </div>
+        {% if form_errors(contact_form.email) %}
+        <div class="error">
+            {{ form_errors(contact_form.email) }}
+        </div>
+        {% endif %}
     </div>
     <div class="form-group">
         <div class="label">
@@ -1074,6 +1116,11 @@
         <div class="input">
             {{ form_widget(contact_form.phone) }}
         </div>
+        {% if form_errors(contact_form.phone) %}
+        <div class="error">
+            {{ form_errors(contact_form.phone) }}
+        </div>
+        {% endif %}
     </div>
     <div class="form-group">
         <div class="label">
@@ -1082,6 +1129,11 @@
         <div class="input">
             {{ form_widget(contact_form.message) }}
         </div>
+        {% if form_errors(contact_form.message) %}
+        <div class="error">
+            {{ form_errors(contact_form.message) }}
+        </div>
+        {% endif %}
     </div>
     <button type="submit">Envoyer</button>
     {{ form_end(contact_form) }}
