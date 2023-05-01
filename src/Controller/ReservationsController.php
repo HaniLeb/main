@@ -25,6 +25,7 @@ class ReservationsController extends AbstractController
             $entityManager->persist($booking);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Votre réservation a bien été prise en compte !');
             return $this->redirectToRoute('app_reservations');
         }
 
@@ -36,6 +37,7 @@ class ReservationsController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Votre message a bien été envoyé !');
             return $this->redirectToRoute('app_reservations');
         }
 

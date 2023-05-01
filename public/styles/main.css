@@ -93,6 +93,44 @@ span {
   color: #404040;
 }
 
+/* Flash messages */
+.flash {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  display: none;
+  padding: 1rem;
+  border-radius: 5px;
+  min-width: 320px;
+  max-width: 480px;
+}
+
+.flash.show {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.flash-success {
+  background-color: #36ae7c;
+  color: #fff;
+}
+
+.flash-close {
+  cursor: pointer;
+}
+
+.flash-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Raleway;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 /*NavBar css */
 nav {
   display: flex;
