@@ -9,21 +9,71 @@
 {% block body %}
 
 <main>
-  <div class="actualite-hero-section">
-    <h1 class="h1-hero-section">Découvrez nos actualitées</h1>
-    <button class="actualite-btn">VOIR LA CARTE</button>
-    <button class="actualite-btn btn-reserver">RESERVER</button>
-  </div>
-  <div class="actualite-container">
-    {% for actualite in actualites %}
-    <div class="actualite">
-      <img src="img/{{ actualite.nomImage }}" alt="" />
+
+  <div class="container">
+
+    
+    {# <div class="actualite-hero-section">
+      
+      <h1 class="h1-hero-section">Découvrez nos actualitées</h1>
+      <button class="actualite-btn">VOIR LA CARTE</button>
+      <button class="actualite-btn btn-reserver">RESERVER</button>
+      
+    </div> #}
+    
+    <h1>Découvrez nos actualitées</h1>
+    <p>Ne manquez aucune actualité de notre restaurant ! Restez informé des dernières tendances culinaires, des événements spéciaux, des nouveaux menus et bien plus encore. Nous sommes fiers de partager avec vous toutes les nouveautés et actualités de notre restaurant pour vous offrir une expérience inoubliable à chaque visite.</p>
+    
+    <section class="actualite-container">
+      
+      {% for actualite in actualites %}
+      
+      <div class="actualite">
+        
+      <img src="img/{{ actualite.nomImage }}" alt="{{ actualite.titre }}" />
       <h2>{{ actualite.titre }}</h2>
-      <p>{{ actualite.description|u.truncate(150) }}...</p>
-      <a href="{{ path('app_actualite_view', {"id": actualite.id}) }}">Voir</a>
+      <p>{{ actualite.description|u.truncate(200) }}...</p>
+      <a href="{{ path('app_actualite_view', {"id": actualite.id}) }}">Voir l'article</a>
+      
     </div>
+    
     {% endfor %}
-  </div>
+    
+  </section>
+  
+</div>
+
+  <section class="partenaire-container">
+    
+    <h2>Nos partenaires</h2>
+    
+    <div class="partenaire">
+      <h3>Guide Michelin</h3>
+      <img src="img/guide-michelin.webp" alt="">
+    </div>
+    
+    <div class="partenaire">
+      <h3>Moby Dick</h3>
+      <img src="img/surf-school-logo.png" alt="">
+    </div>
+    
+    <div class="partenaire">
+      <h3>Cyclo Park</h3>
+      <img src="img/Location-velo.png" alt="">
+    </div>
+    
+    <div class="partenaire">
+      <h3>Hotel Younan</h3>
+      <img src="img/LOGO-hotel.webp" alt="">
+    </div>
+    
+    <div class="partenaire">
+      <h3>Comptoir de la mer</h3>
+      <img src="img/comptoir-de-la-mer.png" alt="">
+    </div>
+    
+  </section>
+  
 </main>
 
 {% endblock %}
