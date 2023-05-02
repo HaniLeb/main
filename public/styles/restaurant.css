@@ -89,38 +89,41 @@ p {
 
 /* zone de presentation du resto */
 .presentation {
+  height: 100%;
+	width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  flex-direction: column;
-  background-color: #8e8181;
+  flex-direction: row;
+  background-color: #84b9cd;
+  text-align: center;
+	margin: 0 auto;
+ 
 }
 
 .banniere {
-  width: 150px;
-  height: 100px;
-  background-color: #cf6666;
-  color: #fff;
+  height: 50%;
+	width: 100%;
+	/* text-align: center; */
+	/* margin-bottom: 20%; */
 }
-
-.carrousel {
-  transform: translate(10%, -20%);
-}
-
 .textePresentation {
+  /* height: 50%; */
+	width: 30%;
   background-color: #444;
   color: #fff;
   border-radius: 5px;
-  padding: 20px;
   font-size: 150%;
+  transform: translate(20%, -40%);
 }
 
+
 /* carrousel */
-/* .custom-slider { display: none; }
+.custom-slider { display: none; }
   .slide-container {
     max-width: 800px;
     position: relative;
     margin: auto;
+
   }
   .prev, .next {
     cursor: pointer;
@@ -184,7 +187,7 @@ p {
   @keyframes fade {
     from {opacity: 0} 
     to {opacity: 1}
-  } */
+  }
 
 
 /* card des plats */
@@ -213,12 +216,14 @@ p {
 .card-body.collapse {
   display: none;
 }
-
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .imagePlat {
-  width: 40%;
-  /* height: 200px; */
-  flex-direction: row-reverse;
-  object-fit: cover;
+width: 40px;
+height: 40px; 
+grid-column-end: auto;
 }
 
 .prix {
