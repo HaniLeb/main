@@ -162,7 +162,7 @@ footer section {
   display: flex; 
   flex-direction: column; /* Ajustement de la direction de la flexbox */
   align-items: center;
-  margin: 20px 50px;
+  margin-left: 200px;
 }
 
 .menu1 {
