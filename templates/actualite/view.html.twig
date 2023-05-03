@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %} {% block title %}Actualitée{% endblock %} {%
-block body %}
-
+block extra_stylesheets %}
+<link rel="stylesheet" href="../../styles/actualite.css" />
+{% endblock %} {% block body %} {#
 <h1>Visualisation d'une actualitées</h1>
+#}
 
-<img src="img/{{ actualite.nomImage }}" alt="" />
-<h2>{{ actualite.titre }}</h2>
-<p>{{ actualite.description }}</p>
+<div class="view-actualite">
+  <img src="../../img/{{ actualite.nomImage }}" alt="{{ actualite.titre }}" />
+  <h2>{{ actualite.titre }}</h2>
+  <p>{{ actualite.description }}</p>
 
-<a href="{{ path('app_actualite') }}">Retour</a>
+  <a href="{{ path('app_actualite') }}">Retour</a>
+</div>
 
 {% endblock %}
