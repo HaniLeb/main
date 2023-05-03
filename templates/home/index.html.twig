@@ -15,41 +15,29 @@
     <section class="hero">
         <div class="top">
             <h1>Bienvenue sur le site de la paillote du Soleil</h1>
-            <a {#href="{{ path('app_home') }}"#} class="link">Test</a>
-        </div>
-
-        <div class="btn-bottom">
-            <a {#href="{{ path('app_home') }}"#}>Test</a>
+            <a href="{{ path('app_reservations') }}" class="link">Réserver</a>
         </div>
     </section>
 
     <main>
         <section class="sect">
             <div class="div1">Nos Actualités</div>
-            <div class="link">
-                <a href="{{ path('app_actualite') }}">Nos Actualités</a>
-            </div>
+            <a class="link" href="{{ path('app_actualite') }}">Nos Actualités</a>
         </section>
 
         <section class="sect">
             <div class="div2">Nos Services</div>
-            <div class="link second">
-                <a href="{{ path('app_services') }}">Nos Services</a>
-            </div>
+            <a class="link second" href="{{ path('app_services') }}">Nos Services</a>
         </section>
 
         <section class="sect">
             <div class="div3">Notre Restaurant</div>
-            <div class="link">
-                <a href="{{ path('app_restaurant') }}">Notre Restaurant</a>
-            <div>
+            <a class="link" href="{{ path('app_restaurant') }}">Notre Restaurant</a>
         </section>
 
         <section class="sect">
             <div class="div4">Réserver</div>
-            <div class="link last">
-                <a href="{{ path('app_reservations') }}">Réserver</a>
-            <div>
+            <a class="link last" href="{{ path('app_reservations') }}">Réserver</a>
         </section>
     </main>
 {% endblock %}

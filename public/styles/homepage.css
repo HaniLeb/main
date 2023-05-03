@@ -8,6 +8,7 @@ main{
 
 h1{
   font-family: "Raleway";
+  text-shadow: 1px 1px 2px black;
   color: white;
 }
 
@@ -36,19 +37,6 @@ a, p{
   align-items: end;
   padding-top: 15%;
   padding-right: 5%;
-}
-
-.btn-bottom {
-  position: absolute;
-  bottom: 9rem;
-  left: 50%;
-  transform: translate(-50%, 0);
-  
-  width: 10%;
-  background-color: #36AE7C;
-  padding: 1%;
-  border-radius: 5px;
-  text-align: center;
 }
 
 .sect{
@@ -91,11 +79,13 @@ a, p{
 
 .link{
   width: 35%;
-  background-color: #36AE7C;
+  background-color: #36AE7C
+  ;
   padding: 1%;
   border-radius: 5px;
   text-align: center;
   margin-top: 2%;
+  display: block;
 }
 
 .link:hover{
