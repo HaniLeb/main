@@ -279,7 +279,8 @@ body {
 
 .textePresentation{
   
-    width: 30%;  
+    width: 35%;  
+    font-size: 18px;
     
 
 }
@@ -297,6 +298,7 @@ body {
 .grid1{
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 2%;
 }
 
