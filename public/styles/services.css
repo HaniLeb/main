@@ -5,17 +5,16 @@ main section{
     padding: 1%;
 }
 
+h1, h2{
+    font-family: "Raleway";
+    text-align: center;
+}
+
 h1{
     text-transform: uppercase;
-    text-align: center;
-    font-family: "Raleway";
 }
 
-h2{
-    text-align: center;
-}
-
-h2, p{
+main p{
   font-family: "Playfair Display";
 }
 
