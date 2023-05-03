@@ -78,7 +78,7 @@ select {
 nav{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-content: center;
   background-color: #fff;
   padding: 5px 20px;
   border-bottom: 1px solid red;
@@ -93,11 +93,11 @@ img {
   display: flex;
   align-items: center;
   height: 40px;
-  margin-right: 20px;
 }
 
 span {
   position: relative;
+  margin-left: 20px;
   font-size: 15px;
   font-family: 'Raleway';
   letter-spacing: 5px;
@@ -201,7 +201,11 @@ ul li a {
     margin: 6px 0;
   }
 
-
+  #openBtn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 /* footer css */
@@ -297,12 +301,12 @@ footer section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .logo img {
-  width: 50px;
-  height: 50px;
+  height: 5%;
+  width: 5%;
+  margin: auto;
 }
 
 h6 {
