@@ -147,15 +147,15 @@ ul li a {
   }
 
   .sidenav {
-    height: 510px;
+    height: 510px ;
     width: 250px;
     position: absolute;
     z-index: 1;
     top: 0;
-    left: -250px;
+    right: 750px;
     background-color: white;
     padding-top: 60px;
-    transform: translate(0%, 51px); 
+    transform: translate(0, 51px); 
     transition: left 0.5s ease;
   }
 
@@ -181,7 +181,7 @@ ul li a {
 
   /* Active class */
   .sidenav.active {
-    left: 0;
+    right: 0;
   }
 
   /* Close btn */
