@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %} {% block title %}Modification d'une actualitées{% endblock
+    %} {% block extra_stylesheets %}
+    <link rel="stylesheet" href="styles/actualite.css" />
+    {% endblock %} {% block body %}
+    
+    <form action="{{ path('app_actualite_edit', {"id": actualite.id}) }}" method="post">
+      {{ form_errors(form) }}
+    
+      <div>
+        {{ form_label(form.nomImage) }}
+        {{ form_widget(form.nomImage) }}
+        {{ form_errors(form.nomImage) }}
+      </div>
+    
+      <div>
+        {{ form_label(form.titre) }}
+        {{ form_widget(form.titre) }}
+        {{ form_errors(form.titre) }}
+      </div>
+    
+      <div>
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+        {{ form_errors(form.description) }}
+      </div>
+    
+      <button type="submit">Valider</button>
+    
+      <a href="{{ path('app_actualite') }}">Retour</a>
+    
+      {{ form_widget(form._token) }}
+    </form>
+    
+    {% endblock %}

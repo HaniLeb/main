@@ -51,13 +51,12 @@
   width: 95%;
 }
 
-.main-actu h1 {
+h1 {
   font-family: "Raleway";
   letter-spacing: 5px;
-  margin: 15px 0;
 }
 
-.main-actu p {
+p {
   font-family: "Playfair Display";
 }
 
@@ -125,6 +124,28 @@
 .actualite-container > *:not(:last-child) {
   border-bottom: 1px solid #303030;
   padding-bottom: 20px;
+}
+
+.presse-container {
+  margin: 20px 0;
+}
+
+.presse-container h3 {
+  font-family: "Raleway";
+  letter-spacing: 5px;
+  margin: 15px 0;
+}
+
+.presse-container h2 {
+  font-family: "Raleway";
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.presse-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
 /* PAGE VIEW-ACTU */
