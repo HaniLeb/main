@@ -6,205 +6,394 @@
 
 {% block title %}Hello RestaurantController!{% endblock %}
 {% block extra_stylesheets %}
-<link rel="stylesheet" href="styles/restaurant.css"> {% endblock %}
+{#
+<link rel="stylesheet" href="styles/restaurant.css"> {% endblock %} #}
+<link rel="stylesheet" href="styles/restaurant-2.css"> {% endblock %}
 
 {% block body %}
 
 <main>
     <section class="presentation">
-        <img src="/img/terrasseRestoSun.jpg" alt="image de la paillote" width="500px">
-        <div>
-            <h1>Présentation de la Paillote du Soleil</h1>
-            <p>La Paillote Soleil est un restaurant situé à Sainte-Maxime, dans le Var. Nous vous proposons une cuisine
-                traditionnelle et de saison, avec des produits frais et locaux. Nous vous accueillons dans un cadre
-                chaleureux et convivial, avec une vue imprenable sur la mer.</p>
-            <p>Créé au debut du siecle, sous le nom de francis, elle renait suite à une explosion malheureuse sous le
-                nom de la paillote du soleil .</p>
-            <p>Aujourd'hui, fort d'une renommée régionale, la rénovation complète de l'établissement en 2020 nous permet
-                désormais d'offrir à notre clientel une expérience exeptionnel.</p>
-        </div>
-        <div>
-            <h1>carrousel</h1>
+        <div id="hauteur">
+            <img class="banniere" src="/img/terrasseRestoSun.jpg" alt="image de la paillote">
+            <div class="textePresentation">
+                <h1>Présentation de la Paillote du Soleil</h1>
+                <p>La Paillote Soleil est un restaurant situé à Sainte-Maxime, dans le Var. Nous vous proposons une
+                    cuisine
+                    traditionnelle et de saison, avec des produits frais et locaux. Nous vous accueillons dans un cadre
+                    chaleureux et convivial, avec une vue imprenable sur la mer.</p>
+                <p id="tablette">Créé au debut du siecle, sous le nom de francis, elle renait suite à une explosion
+                    malheureuse sous
+                    le
+                    nom de la paillote du soleil .</p>
+                <p>Aujourd'hui, fort d'une renommée régionale, la rénovation complète de l'établissement en 2020 nous
+                    permet
+                    désormais d'offrir à notre clientel une expérience exeptionnel.</p>
+            </div>
 
+
+            <div class="carrousel">
+                <div class="slide-container">
+                    <div class="custom-slider fade">
+                        <div class="slide-index">1 / 3</div>
+                        <img class="slide-img" src="/img/salle resto.jpg">
+                        <div class="slide-text">Espace végétalisé, un appel à la sérénité.</div>
+                    </div>
+                    <div class="custom-slider fade">
+                        <div class="slide-index">2 / 3</div>
+                        <img class="slide-img" src="/img/terrasseRestoNuit.jpg">
+                        <div class="slide-text">Relaxer vous! Vous êtes chez vous! </div>
+                    </div>
+                    <div class="custom-slider fade">
+                        <div class="slide-index">3 / 3</div>
+                        <img class="slide-img" src="/img/restoNuit.jpg">
+                        <div class="slide-text">Profitez de la fraicheur nocture</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <div class="slide-dot">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="laCarte">
-        <article class="Entree">
+        <h2>La carte</h2>
+        <article class="entree">
             <div>
-                <h3>Nos Entrées</h3>
-
-
-
-                {# <tbody> mon code qui importe les donner de la base de donnée sans le css de la "card collapse
-                    accordeon"
+                <div class="sousTitre">
+                    <h3>Nos Entrées</h3>
+                </div>
+                <br>
+                <div class="grid1">
                     {% for plat in plats %}
                     {% if plat.type == "entree" %}
 
-                    <tr>
-                        <td>{{ plat.nom }}</td>
-                        <td>{{ plat.ingredients }}</td>
-                        <td>{{ plat.suggestion }}</td>
-                        <td>{{ plat.complements }}</td>
-                        <td>{{ plat.prix }}</td>
-                        <td>{{ plat.image }}</td>
-                        <td>
-                            {% if plat.maison %}
-                            <img href="/img/iconeFaitMaison.jpg" alt="picto fait maison" width="10em" height="10em">
-                            {% endif %}
-                            {% if plat.gluten %}
-                            <img href="/img/iconeGluten.jpg" alt="picto Gluten" width="10em" height="10em">
-                            {% endif %}
-                            {% if plat.vegetarien %}
-                            <img href="/img/iconeVege.png" alt="picto vegétarien" width="10em" height="10em">
-                            {% endif %}
-                        </td>
-                    </tr>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="icone">
+                                <h3 class="nomPlat">{{ plat.nom }}</h3>
+                                {% if plat.maison %}
+                                <img src="/img/faitMaison.png" alt="picto fait maison">
+                                {% endif %}
+
+                                {% if plat.gluten %}
+                                <img src="/img/iconeGluten.jpg" alt="picto Gluten">
+                                {% endif %}
+
+                                {% if plat.vegetarien %}
+                                <img src="img/iconeVege.png" alt="picto vegétarien">
+                                {% endif %}
+                            </div>
+                            <div class="prix">
+                                <p>{{ plat.prix }}€</p>
+                            </div>
+
+                        </div>
+                        <div class="card-body collapse grid">
+                            <div id="texte">
+                                <p><strong>Ingredients:</strong><br>{{ plat.ingredients }}</p>
+                                {% if plat.suggestion != "" %}
+                                <p><strong>Suggestion:</strong><br>{{ plat.suggestion }}</p>
+                                {% endif %}
+                                {% if plat.complements != "" %}
+                                <br>
+                                <p><strong>{{ plat.complements }}</strong></p>
+                                {% endif %}
+
+                            </div>
+                            <div class="imagePlat">
+                                <img src="/img/{{ plat.image }}">
+                            </div>
+
+                        </div>
+                    </div>
                     {% endif %}
                     {% endfor %}
-                </tbody> #}
-
-
-
-
-
-
-                {% for plat in plats %}
-                {% if plat.type == "entree" %}
-
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="icone">
-                            <h3>{{ plat.nom }}</h3>
-                            {% if plat.maison %}
-                            <img src="/img/iconeFaitMaison.jpg" alt="picto fait maison" width="30px" height="30px">
-                            {% endif %}
-
-                            {% if plat.gluten %}
-                            <img src="/img/iconeGluten.jpg" alt="picto Gluten" width="30px" height="30px">
-                            {% endif %}
-
-                            {% if plat.vegetarien %}
-                            <img src="img/iconeVege.png" alt="picto vegétarien" width="30px" height="30px">
-                            {% endif %}
-                        </div>
-                        <div class="prix">
-                            <p>{{ plat.prix }}€</p>
-                        </div>
-
-                    </div>
-                    <div class="card-body collapse">
-                        <p>{{ plat.ingredients }}</p>
-                        <p>{{ plat.suggestion }}</p>
-                        <p>{{ plat.image }}</p>
-
-
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
-
-                <img id="faitMaison" src="iconeFaitMaison.jpg" alt="icone faitMaison" width="4em" height="4em">
-                <img id="platVege" src="iconeVégé.jpg" alt="icone vege" width="4em" height="4em">
-                <img id="platgluten" src="iconeGluten.jpg" alt="icone Gluten" width="4em" height="4em">
-                <div>
-                    <p>description soupe tomate</p>
-                    <img id="entree?" src="?.jpg" alt="?" width="20em" height="20em">
                 </div>
             </div>
+        </article>
 
-            <article class="plat">
-                <div>
-                    <p>titre soupe tomate</p>
-                    <img id="faitMaison" src="iconeFaitMaison.jpg" alt="icone faitMaison" width="4em" height="4em">
-                    <img id="platVege" src="iconeVégé.jpg" alt="icone vege" width="4em" height="4em">
-                    <img id="platgluten" src="iconeGluten.jpg" alt="icone Gluten" width="4em" height="4em">
-                    <div>
-                        <p>description soupe tomate</p>
-                        <img id="plat?" src="?.jpg" alt="?" width="20em" height="20em">
-                    </div>
+
+        <article class="plat">
+            <div>
+                <div class="sousTitre2">
+                    <h3>Nos Plats</h3>
                 </div>
+                <br>
+                <div class="grid1">
+                    {% for plat in plats %}
+                    {% if plat.type == "plat" %}
 
-                <article class="dessert">
-                    <div>
-                        <p>titre soupe tomate</p>
-                        <img id="faitMaison" src="iconeFaitMaison.jpg" alt="icone faitMaison" width="4em" height="4em">
-                        <img id="platVege" src="iconeVégé.jpg" alt="icone vege" width="4em" height="4em">
-                        <img id="platgluten" src="iconeGluten.jpg" alt="icone Gluten" width="4em" height="4em">
-                        <div>
-                            <p>description soupe tomate</p>
-                            <img id="dessert?" src="?.jpg" alt="?" width="20em" height="20em">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="icone">
+                                <h3 class="nomPlat">{{ plat.nom }}</h3>
+                                {% if plat.maison %}
+                                <img src="/img/faitMaison.png" alt="picto fait maison">
+                                {% endif %}
+
+                                {% if plat.gluten %}
+                                <img src="/img/iconeGluten.jpg" alt="picto Gluten">
+                                {% endif %}
+
+                                {% if plat.vegetarien %}
+                                <img src="img/iconeVege.png" alt="picto vegétarien">
+                                {% endif %}
+                            </div>
+                            <div class="prix">
+                                <p>{{ plat.prix }}€</p>
+                            </div>
+
+                        </div>
+                        <div class="card-body collapse grid">
+                            <div id="texte">
+                                <p><strong>Ingredients:</strong><br>{{ plat.ingredients }}</p>
+                                {% if plat.suggestion != "" %}
+                                <p><strong>Suggestion:</strong><br>{{ plat.suggestion }}</p>
+                                {% endif %}
+                                {% if plat.complements != "" %}
+                                <br>
+                                <p><strong>{{ plat.complements }}</strong></p>
+                                {% endif %}
+
+                            </div>
+                            <div class="imagePlat">
+                                <img src="/img/{{ plat.image }}">
+                            </div>
+
                         </div>
                     </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
 
+        <article class="dessert">
+            <div>
+                <div class="sousTitre2">
+                    <h3>Nos Desserts</h3>
+                </div>
+                <br>
+                <div class="grid1">
+                    {% for plat in plats %}
+                    {% if plat.type == "dessert" %}
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="icone">
+                                <h3 class="nomPlat">{{ plat.nom }}</h3>
+                                {% if plat.maison %}
+                                <img src="/img/faitMaison.png" alt="picto fait maison">
+                                {% endif %}
+
+                                {% if plat.gluten %}
+                                <img src="/img/iconeGluten.jpg" alt="picto Gluten">
+                                {% endif %}
+
+                                {% if plat.vegetarien %}
+                                <img src="img/iconeVege.png" alt="picto vegétarien">
+                                {% endif %}
+                            </div>
+                            <div class="prix">
+                                <p>{{ plat.prix }}€</p>
+                            </div>
+
+                        </div>
+                        <div class="card-body collapse grid">
+                            <div id="texte">
+                                <p><strong>Ingredients:</strong><br>{{ plat.ingredients }}</p>
+                                {% if plat.suggestion != "" %}
+                                <p><strong>Suggestion:</strong><br>{{ plat.suggestion }}</p>
+                                {% endif %}
+                                {% if plat.complements != "" %}
+                                <br>
+                                <p><strong>{{ plat.complements }}</strong></p>
+                                {% endif %}
+
+                            </div>
+                            <div class="imagePlat">
+                                <img src="/img/{{ plat.image }}">
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
     </section>
+
+    {# partie Menu #}
+
+    <div class="titreBouton">
+        <h2>Nos menus</h2>
+        <a class="bouton" href=" ">réserver</a>
+    </div>
     <section class="menu">
-        <a href=" ">réserver</a>
-        <div>
-            <p>Menu 1</p>
-            <p>18€</p>
-            <div>
-                <p>entree + plat ou plat + dessert</p>
-                <p>boissons en complement</p>
-                <img id="Menu" src="img/formule1.jpg" alt="" width="20em" height="20em">
-            </div>
+        <div class="grid2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="icone">
 
-            <div>
-                <p>Menu 2</p>
-                <p>23€</p>
-                <div>
-                    <p>entree + plat + dessert</p>
-                    <p>boissons en complement, café offert</p>
-                    <img id="Menu" src="img/formule2.jpg" alt="" width="20em" height="20em">
-                </div>
+                        <h3>Menu 1</h3>
 
-                <div>
-                    <p>Menu enfant</p>
-                    <p>8€</p>
-                    <div>
-                        <p>panée de poulet, frites </p>
-                        <p>boissons en complement</p>
-                        <img id="Menu" src="img/menuEnfant.jpg" alt="" width="20em" height="20em">
+                    </div>
+                    <div class="prix">
+                        <p>18€</p>
                     </div>
 
-    </section>
+                </div>
+                <div class="card-body collapse grid">
+                    <div id="texte">
+                        <p>entree + plat</p> <br>
+                        <p>ou</p> <br>
+                        <p>plat+ dessert</p><br>
+                        <p><i>un verre de vin et un café offerts</i></p>
+                    </div>
+                    <div class="imagePlat">
+                        <img id="Menu" src="img/formule1.jpg" alt="">
+                    </div>
 
 
-    <section class="traiteur">
-        <a href=" ">demandez un devis</a>
-        <div>
-            <p>formule 1</p>
-            <p>dès15€/pers.</p>
-            <div>
-                <p>Les Services:</p>
-                <p>Menu au choix</p>
-                <p>Buffet</p>
-                <p>Livraison</p>
-                <p>location de matèriel</p>
-                <img id="traiteur1" src="img/traiteur8.jpg" alt="" width="20em" height="20em">
-                <img id="traiteur" src="img/traiteur2.jpg" alt="" width="20em" height="20em">
-                <img id="traiteur" src="img/traiteur3.jpg" alt="" width="20em" height="20em">
-                <img id="traiteur" src="img/traiteur4.jpg" alt="" width="20em" height="20em">
+                </div>
             </div>
 
-            <div>
-                <p>formule 2</p>
-                <p>23€</p>
-                <p>dès 30€/pers.</p>
-                <div>
-                    <p>Les Services:</p>
-                    <p>Menu au choix</p>
-                    <p>Buffet</p>
-                    <p>Livraison</p>
-                    <p>location de matèriel</p>
-                    <img id="traiteur1" src="img/traiteur5.jpg" alt="" width="20em" height="20em">
-                    <img id="traiteur" src="img/traiteur6.jpeg" alt="" width="20em" height="20em">
-                    <img id="traiteur" src="img/traiteur7.jpg" alt="" width="20em" height="20em">
-                    <img id="traiteur" src="img/traiteur1.jpeg" alt="" width="20em" height="20em">
+
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icone">
+
+                        <h3>Menu 2</h3>
+
+                    </div>
+                    <div class="prix">
+                        <p>23€</p>
+                    </div>
+
                 </div>
+                <div class="card-body collapse grid">
+                    <div id="texte">
+                        <p>entree + plat + dessert</p><br>
+                        <p><i>boissons en complement, café offert</i></p>
+                    </div>
+                    <div class="imagePlat">
+                        <img id="Menu" src="img/formule2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="icone">
+
+                        <h3>Menu enfant</h3>
+
+                    </div>
+                    <div class="prix">
+                        <p>10€</p>
+                    </div>
+
+                </div>
+                <div class="card-body collapse grid">
+                    <div id="texte">
+                        <p>nuggets ou steak-haché + frites</p>
+                        <br>
+                        <p><i>boissons en complement</i></p>
+                    </div>
+                    <div class="imagePlat">
+                        <img id="Menu" src="img/menuEnfant.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="titreBouton">
+        <h2>Traiteur</h2>
+        <a class="bouton" href=" ">demandez un devis</a>
+    </div>
+    <section class="traiteur">
+        <div class="grid1">
+            <div class="card">
+                <div class="card-header">
+                    <div class="icone">
+                        <h3>formule 1</h3>
+
+                    </div>
+                    <div class="prix2">
+                        <p>dès 15€/pers.</p>
+                    </div>
+
+                </div>
+                <div class="card-body collapse grid">
+                    {# <div>
+                        <img id="traiteur1" src="img/traiteur8.jpg" alt="">
+                        <img id="traiteur" src="img/traiteur2.jpg" alt="">
+                    </div> #}
+                    <div id="texte">
+                        <p>Les Services:</p>
+                        <p>Menu au choix</p>
+                        <p>Buffet</p>
+                        <p>Livraison</p>
+                        <p>location de matèriel</p>
+                    </div>
+                    <div class="imagePlat">
+                        {# <img id="traiteur" src="img/traiteur3.jpg" alt=""> #}
+                        <img id="traiteur" src="img/traiteur4.jpg" alt="">
+                    </div>
 
 
+                </div>
+            </div>
+
+
+
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icone">
+                        <h3>formule 2</h3>
+
+                    </div>
+                    <div class="prix2">
+                        <p>dès 30€/pers.</p>
+                    </div>
+
+                </div>
+                <div class="card-body collapse grid">
+                    {# <div>
+                        <img id="traiteur1" src="img/traiteur8.jpg" alt="">
+                        <img id="traiteur" src="img/traiteur2.jpg" alt="">
+                    </div> #}
+                    <div id="texte">
+                        <p>Les Services:</p>
+                        <p>Menu au choix</p>
+                        <p>mise à disposition de personnel</p>
+                        <p>un référent operationnel</p>
+                        <p>service à table</p>
+                        <p>location de matèriel</p>
+                        <p>gestion des déchets et évacuation des locations</p>
+                    </div>
+                    <div class="imagePlat">
+                        <img id="traiteur" src="img/traiteur3.jpg" alt="">
+                        {# <img id="traiteur" src="img/traiteur4.jpg" alt=""> #}
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
 
     </section>
 
