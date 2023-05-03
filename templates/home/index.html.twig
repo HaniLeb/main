@@ -18,28 +18,38 @@
             <a {#href="{{ path('app_home') }}"#} class="link">Test</a>
         </div>
 
-            <a {#href="{{ path('app_home') }}"#} class="btn-bottom">Test</a>
+        <div class="btn-bottom">
+            <a {#href="{{ path('app_home') }}"#}>Test</a>
+        </div>
     </section>
 
     <main>
-        <section class="sect1">
+        <section class="sect">
             <div class="div1">Nos Actualités</div>
-            <a {#href="{{ path('app_actualite') }}"#} class="link">Nos Actualités</a>
+            <div class="link">
+                <a href="{{ path('app_actualite') }}">Nos Actualités</a>
+            </div>
         </section>
 
-        <section class="sect2">
+        <section class="sect">
             <div class="div2">Nos Services</div>
-            <a href="{{ path('app_services') }}" class="link">Nos Services</a>
+            <div class="link second">
+                <a href="{{ path('app_services') }}">Nos Services</a>
+            </div>
         </section>
 
-        <section class="sect3">
+        <section class="sect">
             <div class="div3">Notre Restaurant</div>
-            <a href="{{ path('app_restaurant') }}" class="link">Notre Restaurant</a>
+            <div class="link">
+                <a href="{{ path('app_restaurant') }}">Notre Restaurant</a>
+            <div>
         </section>
 
-        <section class="sect4">
+        <section class="sect">
             <div class="div4">Réserver</div>
-            <a {#href="{{ path('app_reservations') }}"#} class="link">Réserver</a>
+            <div class="link last">
+                <a href="{{ path('app_reservations') }}">Réserver</a>
+            <div>
         </section>
     </main>
 {% endblock %}
