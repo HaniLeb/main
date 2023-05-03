@@ -11,6 +11,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 figure,
 blockquote,
@@ -73,9 +75,64 @@ select {
   }
 }
 
-/*NavBar css */
+/** Global Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway";
+  letter-spacing: 5px;
+  color: #404040;
+}
 
-nav{
+p,
+span {
+  font-family: "Playfair Display";
+  color: #404040;
+}
+
+/* Flash messages */
+.flash {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  display: none;
+  padding: 1rem;
+  border-radius: 5px;
+  min-width: 320px;
+  max-width: 480px;
+}
+
+.flash.show {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.flash-success {
+  background-color: #36ae7c;
+  color: #fff;
+}
+
+.flash-close {
+  cursor: pointer;
+}
+
+.flash-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Raleway;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/*NavBar css */
+nav {
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -87,7 +144,7 @@ nav{
 .navLogo {
   display: flex;
   align-items: center;
-} 
+}
 
 img {
   display: flex;
@@ -95,18 +152,20 @@ img {
   height: 40px;
 }
 
+
 span {
   position: relative;
   margin-left: 20px;
   font-size: 15px;
-  font-family: 'Raleway';
+  font-family: "Raleway";
   letter-spacing: 5px;
   color: black;
   text-decoration: none;
 }
 
-ul {  
-  font-family: 'Raleway';
+ul {
+  display: flex;
+  font-family: "Raleway";
   justify-content: flex-end;
   align-items: center;
   list-style: none;
@@ -119,7 +178,7 @@ ul li {
 }
 
 ul li:first-child {
-  margin-left: 0px; 
+  margin-left: 0px;
 }
 
 ul li a {

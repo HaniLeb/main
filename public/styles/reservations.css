@@ -9,7 +9,7 @@
 }
 
 .reservations-hero-section form {
-  font-family: Playfair Display;
+  font-family: Raleway;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(2px);
   border-radius: 10px;
@@ -23,7 +23,8 @@
   gap: 1rem;
 }
 
-.reservations-hero-section form .form-group {
+.reservations-hero-section form .form-group,
+.reservations-contact-section form .form-group {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -31,8 +32,24 @@
 }
 
 .reservations-hero-section input,
-.reservations-hero-section select {
+.reservations-hero-section select,
+.reservations-contact-section input,
+.reservations-contact-section select {
   border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+.reservations-hero-section label,
+.reservations-contact-section label {
+  font-weight: bold;
+}
+
+.reservations-hero-section form .error,
+.reservations-contact-section form .error {
+  color: red;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  text-align: center;
 }
 
 .reservations-hero-section button {
@@ -50,17 +67,145 @@
   text-align: center;
 }
 
+.reservations-infos-section {
+  margin: 3rem auto 0;
+}
+
+.reservations-infos-section h2,
+.reservations-contact-section h2 {
+  margin-left: 1.5rem;
+}
+.reservations-infos-section img {
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+.reservations-infos-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: #eeeeee;
+  padding: 3rem 0;
+  gap: 1rem;
+}
+
+.reservations-infos-container > div {
+  width: 49%;
+}
+
+.reservations-infos-container > div:nth-of-type(1) > p:nth-of-type(1) {
+  font-weight: bold;
+}
+
+.reservations-infos-container > div:nth-of-type(2) > p {
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+}
+.reservations-infos-container > div:nth-of-type(2) > p > span {
+  text-align: center;
+}
+
+.reservations-infos-container > div:nth-of-type(3) > p:nth-of-type(1) {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.reservations-infos-container > div:nth-of-type(3) > p:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reservations-infos-container > div:nth-of-type(3) > p:nth-of-type(2) > a {
+  margin: 0 10px;
+}
+
+.reservations-infos-container > div:nth-of-type(3) > p:nth-of-type(2) > span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.reservations-infos-container > div:nth-of-type(4) > p:nth-of-type(1) > svg {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.reservations-infos-container p,
+.reservations-infos-container a,
+.reservations-infos-container h3,
+.reservations-infos-container h4,
+.reservations-infos-container h5 {
+  text-align: center;
+  margin: 0.25rem;
+}
+
+.reservations-infos-container h3 {
+  color: #eb5353;
+  text-decoration: underline;
+  margin: 1rem;
+}
+.reservations-infos-container h4 {
+  text-decoration: underline;
+  margin: 0.5rem;
+}
+
+.reservations-infos-container a {
+  color: #f9d923;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 auto;
+  display: block;
+}
+
 @media (min-width: 744px) {
   .reservations-hero-section form {
     width: 50%;
   }
+
+  .reservations-infos-section img {
+    width: 90%;
+    margin: 3rem auto;
+  }
 }
 
-.reservations-infos-section {
-  margin: 3rem auto;
+.reservations-contact-section {
+  background-color: #eb5353;
+  padding: 3rem 0;
+}
+.reservations-contact-section form {
+  font-family: Raleway;
+  padding: 20px;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-.reservations-infos-section h2 {
+.reservations-contact-section form > .form-group:nth-of-type(5) > .input {
+  align-self: stretch;
+}
+
+.reservations-contact-section button {
+  width: 40%;
   font-family: Raleway;
   letter-spacing: 5px;
+}
+
+.reservations-contact-section textarea {
+  width: 40%;
+  resize: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  min-width: 300px;
+  width: 100%;
+  min-height: 170px;
 }

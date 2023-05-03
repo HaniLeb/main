@@ -16,32 +16,31 @@ class Booking
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Assert\NotBlank(message: 'Please enter a date')]
-    #[Assert\DateTime(message: 'The date {{ value }} is not a valid date.')]
-    #[Assert\GreaterThan('+1 hour', message: 'You must book at least 1 hour in advance')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner une date')]
+    #[Assert\GreaterThan('+1 hour', message: 'Votre réservation doit être prise au moins 1 heure à l\'avance')]
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[Assert\NotBlank(message: 'Please enter a number of places')]
-    #[Assert\GreaterThan(0, message: 'The number of places must be greater than 0')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner le nombre de couverts')]
+    #[Assert\GreaterThan(0, message: 'Le nombre de couverts doit être supérieur à 0')]
     #[ORM\Column]
     private ?int $nbPlaces = null;
 
-    #[Assert\NotBlank(message: 'Please enter your name')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner votre nom')]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[Assert\NotBlank(message: 'Please enter your email')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner votre email')]
     #[Assert\Email(
-        message: 'The email {{ value }} is not a valid email.',
+        message: 'L\'adresse {{ value }} n\'est pas une adresse valide.',
     )]
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[Assert\NotBlank(message: 'Please enter your phone number')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner votre numéro de téléphone')]
     #[Assert\Regex(
         pattern: '/^\+?\d{10,12}$/',
-        message: 'The phone number {{ value }} is not a valid phone number.',
+        message: 'Le numéro {{ value }} n\'est pas au bon format.',
     )]
     #[ORM\Column(length: 255)]
     private ?string $phone = null;
