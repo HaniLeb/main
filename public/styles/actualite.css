@@ -173,3 +173,17 @@ p {
   text-decoration: none;
   color: #187498;
 }
+
+.partenaire-container {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 70%;
+  }
+
+  .actualite img {
+    height: 400px;
+  }
+}

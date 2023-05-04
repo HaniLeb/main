@@ -24,9 +24,15 @@
     <h1>Découvrez nos actualitées</h1>
     <p>Ne manquez aucune actualité de notre restaurant ! Restez informé des dernières tendances culinaires, des événements spéciaux, des nouveaux menus et bien plus encore. Nous sommes fiers de partager avec vous toutes les nouveautés et actualités de notre restaurant pour vous offrir une expérience inoubliable à chaque visite.</p>
     
+    {% if is_granted('ROLE_ADMIN') %}
+      <a href="{{ path('app_logout') }}">Déconnexion</a>
+    {% endif %}
+
     <section class="actualite-container">
 
-      <a href="{{ path('app_actualite_create') }}">Nouvelle actualitée</a>
+      {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_actualite_create') }}">Nouvelle actualitée</a>
+      {% endif %}
       
       {% for actualite in actualites %}
       
@@ -37,11 +43,14 @@
       <p>{{ actualite.description|u.truncate(200) }}...</p>
 
       <a href="{{ path('app_actualite_view', {"id": actualite.id}) }}">Voir l'article</a>
-      <form method="post" action="{{ path('app_actualite_delete', {"id": actualite.id}) }}">
-        <input type="hidden" name="token" value="{{ csrf_token('actualite-' ~ actualite.id) }}">
-        <button type="submit">Supprimer</button>
-      </form>
-      <a href="{{ path('app_actualite_edit', {"id": actualite.id}) }}">Modifier</a>
+
+      {% if is_granted('ROLE_ADMIN') %}
+        <form method="post" action="{{ path('app_actualite_delete', {"id": actualite.id}) }}">
+          <input type="hidden" name="token" value="{{ csrf_token('actualite-' ~ actualite.id) }}">
+          <button type="submit">Supprimer</button>
+        </form>
+        <a href="{{ path('app_actualite_edit', {"id": actualite.id}) }}">Modifier</a>
+      {% endif %}
       
     </div>
     
