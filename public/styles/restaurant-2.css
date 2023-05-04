@@ -219,10 +219,9 @@ h2{
   
   .prix {
     font-size: 30px;
-    color: #EB5353;
   }
-
-  .prix2{
+  
+  .prix p, .prix2 p {
     color: #EB5353;
   }
 
