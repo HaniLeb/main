@@ -164,7 +164,7 @@ span {
 }
 
 ul {
-  display: flex;
+  display: block;
   font-family: "Playfair Display";
   justify-content: flex-end;
   align-items: center;
