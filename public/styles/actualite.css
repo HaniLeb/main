@@ -186,4 +186,14 @@ p {
   .actualite img {
     height: 400px;
   }
+
+  .view-actualite img {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main p {
+    font-size: 1.4em;
+  }
 }
