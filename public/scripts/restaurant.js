@@ -12,6 +12,14 @@ cardHeaders.forEach(header => {
 
 let slideIndex = 1;
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("custom-slider");
