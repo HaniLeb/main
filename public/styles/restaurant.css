@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box;
+}
+
+main h2 {
+  background-color: #F5AD00;
+  width: 200px;
+  padding: 0.5em;
+  border-radius: 0 100px 100px 0;
+}
+
+main h3 {
+  font-size: 2rem;
+}
+
+/* carrousel */
+
+.carrousel {
+  width: 95%;
+  height: 30vh;
+  margin: auto;
+}
+
+.custom-slider {
+  height: 100%;
+  display: none;
+}
+
+.slide-container {
+  height: 100%;
+  transform: translate(0, 0);
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 3em;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.6s ease;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 25px;
+  left: 5%;
+
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.slide-index {
+  color: #ffffff;
+  font-size: 13px;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* Présentation */
+
+.presentation {
+  background-color: #e1bcbe;
+  width: 90%;
+  margin: 5% auto;
+  padding: 3% 5%;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.presentation h1 {
+  text-align: center;
+}
+
+.presentation div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3% auto;
+}
+
+.presentation img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 2%;
+}
+
+/* la carte */
+
+.laCarte {
+  background-color: #205372;
+  width: 90%;
+  margin: auto;
+  padding: 5% 0;
+  border-radius: 15px;
+  margin-bottom: 5%;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.entree,
+.plat,
+.dessert {
+  padding: 0 5% 5%;
+}
+
+.menuResto,
+.traiteur {
+  padding: 5% 5% 5%;
+}
+
+.sousTitre {
+  padding: 2%;
+}
+
+.sousTitre h3,
+.sousTitre2 h3 {
+  color: white;
+
+}
+
+.sousTitre2 {
+  padding-left: 2%;
+}
+
+
+/* card des plats */
+.card {
+  width: 100%;
+  height: fit-content;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+
+.card-header {
+  background-color: #e2e2e2;
+  padding: 5%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body {
+  margin-bottom: 5%;
+  padding: 5%;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.24);
+  border-radius: 0 0 15px 15px;
+}
+
+.card-body.collapse {
+  display: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#texte {
+  height: fit-content;
+  text-align: center;
+}
+
+#texte p {
+  color: white;
+}
+
+.imagePlat {
+  width: 100%;
+  height: 100%;
+}
+
+.imagePlat img {
+  width: 20rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 3% auto;
+}
+
+.icone {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icone div {
+  display: flex;
+  gap: 15%;
+  justify-content: left;
+}
+
+.icone img {
+  width: 30px;
+  height: 30px;
+}
+
+.prix {
+  width: 20%;
+}
+
+.prix p {
+  font-size: 1.5rem;
+  text-align: right;
+  color: #E63933;
+}
+
+/*responsive*/
+
+/* Tablette */
+@media screen and (min-width: 744px) {
+  .desktop {
+    display: none;
+  }
+
+  .slide-text {
+    left: 28%;
+  }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2%;
+  }
+
+
+  .imagePlat img {
+    width: 20rem;
+    height: 10rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1000px) {
+  .presentation {
+    padding: 2% 3%;
+  }
+
+  .presentation section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 3%;
+  }
+
+  .presentation h1 {
+    font-size: 2rem;
+  }
+
+  .presentation p {
+    font-size: 1.5rem;
+  }
+
+  .presentation img {
+    height: 500px;
+    object-fit: cover;
+  }
+
+  /* carrousel */
+
+  .carrousel {
+    height: 50vh;
+  }
+
+  .slide-text {
+    left: 35%;
+    font-size: 3rem;
+  }
+
+  .desktop {
+    width: 70%;
+    height: auto;
+    margin: auto;
+
+  }
+
+  .slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2%;
+  }
+
+  .grid-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imagePlat img {
+    width: 100%;
+    height: 20rem;
+  }
+}

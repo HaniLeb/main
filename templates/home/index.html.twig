@@ -2,42 +2,55 @@
 
 {% block extra_stylesheets %} <link rel="stylesheet" href="styles/homepage.css"> {% endblock %}
 
-{# SEO BLOCKS #}
-{# {% block page_url %}{% endblock %} #}
-{# {% block featured_image %}{% endblock %} #}
-{# {% block og_type %}{% endblock %} #}
-{# {% block extra_keywords %}{% endblock %} #}
-
 {% block title %}Accueil{% endblock %}
-{# {% block description %}{% endblock %} #}
 
 {% block body %}
     <section class="hero">
-        <div class="top">
-            <h1>Bienvenue sur le site de la paillote du Soleil</h1>
-            <a href="{{ path('app_reservations') }}" class="link">Réserver</a>
-        </div>
+        {# Section du haut contient une image de fond, un titre et un bouton #}
+        <span class="filter">
+            <div class="top">
+                <h1>La paillote du soleil votre nouveau chez vous !</h1>
+                <a href="{{ path('app_reservations') }}" class="btn-red">Réserver</a>
+            </div>
+        </span>
     </section>
 
     <main>
-        <section class="sect">
-            <div class="div1">Nos Actualités</div>
-            <a class="link" href="{{ path('app_actualite') }}">Nos Actualités</a>
-        </section>
+        {# Les cards qui sont des liens avec une image de fond, un titre et du text #}
+        <a class="sect" href="{{ path('app_actualite') }}">
+            <span class="bg-img bg1">
+                <div class="filter2">
+                    <h2>Actualités</h2>
+                    <p>En savoir plus</p>
+                </div>
+            </span>
+        </a>
 
-        <section class="sect">
-            <div class="div2">Nos Services</div>
-            <a class="link second" href="{{ path('app_services') }}">Nos Services</a>
-        </section>
+        <a class="sect" href="{{ path('app_services') }}">
+            <span class="bg-img bg2">
+                <div class="filter2">
+                    <h2>Services</h2>
+                    <p>En savoir plus</p>
+                </div>
+            </span>
+        </a>
 
-        <section class="sect">
-            <div class="div3">Notre Restaurant</div>
-            <a class="link" href="{{ path('app_restaurant') }}">Notre Restaurant</a>
-        </section>
+        <a class="sect" href="{{ path('app_restaurant') }}">
+            <span class="bg-img bg3">
+                <div class="filter2">
+                    <h2>Menu</h2>
+                    <p>En savoir plus</p>
+                </div>
+            </span>
+        </a>
 
-        <section class="sect">
-            <div class="div4">Réserver</div>
-            <a class="link last" href="{{ path('app_reservations') }}">Réserver</a>
-        </section>
+        <a class="sect" href="{{ path('app_reservations') }}">
+            <span class="bg-img bg4">
+                <div class="filter2">
+                    <h2>Réserver</h2>
+                    <p>En savoir plus</p>
+                </div>
+            </span>
+        </a>
     </main>
 {% endblock %}

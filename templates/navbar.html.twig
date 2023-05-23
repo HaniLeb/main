@@ -1,15 +1,17 @@
-{% block extra_javascripts %} 
-<script defer src="scripts/burger.js"></script> 
-{% endblock %}
 <header>
 	<nav>
-		<div class="navLogo">
-			<a href="{{ path('app_home') }}">
-				<img src="logo-no-background.png" alt="Logo">
+		<div class="logoTitle">
+			<a class="logo" href="{{ path('app_home') }}">
+				<img src="/logo-black.svg" alt="Logo">
 			</a>
-			<span>La paillote du Soleil</span>
+			<h1><a class="title" href="{{ path('app_home') }}">La Paillote du Soleil</a></h1>
 		</div>
+
+		{# Menu desktop #}
 		<ul id="navDesktop">
+			<li>
+				<a href="{{ path('app_home') }}">Accueil</a>
+			</li>
 			<li>
 				<a href="{{ path('app_actualite') }}">Nos Actualités</a>
 			</li>
@@ -24,18 +26,8 @@
 			</li>
 		</ul>
 
+		{# Menu burger #}
 		<div id="navMobile">
-			{# Menu burger #}
-			<div id="mySidenav" class="sidenav">
-				<a id="closeBtn" href="#" class="close">×</a>
-				<ul>
-					<li><a href="{{ path('app_actualite') }}">Nos Actualités</a></li>
-					<li><a href="{{ path('app_services') }}">Nos Services</a></li>
-					<li><a href="{{ path('app_restaurant') }}">Restaurant</a></li>
-					<li><a href="{{ path('app_reservations') }}">Réservations</a></li>
-				</ul>
-			</div>
-
 			<a href="#" id="openBtn">
 				<span class="burger-icon">
 					<span></span>
@@ -43,6 +35,18 @@
 					<span></span>
 				</span>
 			</a>
+
+			<div id="mySidenav" class="sidenav">
+				<a id="closeBtn" href="#" class="close">×</a>
+				<ul>
+					<li><a href="{{ path('app_home') }}">Accueil</a></li>
+					<li><a href="{{ path('app_actualite') }}">Nos Actualités</a></li>
+					<li><a href="{{ path('app_services') }}">Nos Services</a></li>
+					<li><a href="{{ path('app_restaurant') }}">Restaurant</a></li>
+					<li><a href="{{ path('app_reservations') }}">Réservations</a></li>
+				</ul>
+			</div>
 		</div>
+
 	</nav>
 </header>

@@ -5,43 +5,23 @@
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  background-color: #F0EADA;
+  color: black;
+  margin: 0;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+ul,ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, li {
+  text-decoration: none;
+  color: black;
 }
 
 /* Make images easier to work with */
@@ -51,30 +31,6 @@ picture {
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 /** Global Styles */
 h1,
 h2,
@@ -82,15 +38,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway";
-  letter-spacing: 5px;
-  color: #404040;
+  font-family: "Poppins";
+  color: black;
+  margin: 0;
 }
 
 p,
 span {
   font-family: "Playfair Display";
-  color: #404040;
+  color: black;
+  margin: 0;
 }
 
 /* Flash messages */
@@ -126,260 +83,6 @@ span {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: Raleway;
-  letter-spacing: 5px;
   text-align: center;
   margin-bottom: 1rem;
-}
-
-/*NavBar css */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  background-color: #fff;
-  padding: 5px 20px;
-  border-bottom: 1px solid red;
-}
-
-.navLogo {
-  display: flex;
-  align-items: center;
-}
-
-img {
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
-
-
-span {
-  position: relative;
-  margin-left: 20px;
-  font-size: 15px;
-  font-family: "Raleway";
-  letter-spacing: 5px;
-  color: black;
-  text-decoration: none;
-}
-
-ul {
-  display: block;
-  font-family: "Playfair Display";
-  justify-content: flex-end;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  margin-left: 20px;
-}
-
-ul li:first-child {
-  margin-left: 0px;
-}
-
-ul li a {
-  font-size: 15px;
-  color: black;
-  text-decoration: none;
-}
-
-#navDesktop {
-  display: flex  ;
-}
-
-#navMobile {
-  display: none;
-}
-  
-@media screen and (max-width: 767px) {
-/* Menu Burger */
-
-  #navMobile {
-    display: block;
-  }
-  #navDesktop {
-    display: none;
-  }
-
-  .sidenav {
-    height: 510px ;
-    width: 250px;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 750px;
-    background-color: white;
-    padding-top: 60px;
-    transform: translate(0, 51px); 
-    transition: left 0.5s ease;
-  }
-
-  /* Sidenav menu links */
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: flex;
-    transition: 0.3s;
-  }
-
-  .sidenav a:hover {
-    color: #111;
-  }
-
-  .sidenav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  /* Active class */
-  .sidenav.active {
-    right: 0;
-  }
-
-  /* Close btn */
-  .sidenav .close {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-
-  /* Icône burger */
-  .burger-icon span {
-    display: block;
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
-  }
-
-  #openBtn{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-
-/* footer css */
-
-/* Version Mobile */
-
-@media only screen and (max-width: 767px) {
-  footer section {
-    display: flex;
-    flex-direction: column;
-  }
-  footer .newsletter, footer .menu, footer .menu1, footer .logo, footer .copy {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .test {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-  }
-
-}
-
-/* Version Desktop */
-
-footer {
-  background-color: #D9D9D9;
-}
-
-footer section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.newsletter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0px;
-}
-
-.menu {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;
-  margin-left: 50px;
-}
-
-.menu1 {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;
-  margin: 20px 50px;
-}
-
-.menu a,
-.menu1 a {
-  text-decoration: none;
-  color: black;
-  font-family: 'Raleway';
-  padding: 5px;
-}
-
-.newsletter p {
-  order: 1;
-  margin: 10px 0px;
-  text-align: center;
-}
-
-.newsletter form {
-  order: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.newsletter input {
-  margin-right: 10px;
-}
-
-.newsletter button {
-  width: 80px;
-  background-color: #187498;
-  color: white;
-  padding: 1%;
-  border-radius: 5px;
-  text-align: center;
-  border: none;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo img {
-  height: 5%;
-  width: 5%;
-  margin: auto;
-}
-
-h6 {
-  font-family: 'Raleway';
-  font-size: 15px;
-  margin: 5px;
-} 
-
-.copy p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #4D4D4D;
-  color: #FFC604;
 }

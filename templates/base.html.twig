@@ -9,22 +9,27 @@
     {# Fonts #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
     {# Favicon #}
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    {# <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg"> #}
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
+    {# <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg"> #}
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    {# <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"> #}
     <meta name="msapplication-TileColor" content="#da532c">
 
     {# Stylesheets #}
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+	<link rel="stylesheet" href="/styles/navbar.css">
     {% block extra_stylesheets %}{% endblock %}
 
+
+
     {# Scripts #}
-    <script src="scripts/main.js" defer></script>
+    <script src="/scripts/main.js" defer></script>
+    <script defer src="/scripts/burger.js"></script>
     {% block extra_javascripts %}{% endblock %}
 
     {# SEO #}
@@ -46,6 +51,7 @@
 
     {# JSON-LD #}
     <script type="application/ld+json">
+    
     {% block json_ld %}
     {
         "@context": "https://schema.org/",
@@ -75,22 +81,22 @@
 </head>
 
 <body>
-    {% include 'header.html.twig' %}
+    {% include 'navbar.html.twig' %}
     {% block body %}{% endblock %}
     {% include 'footer.html.twig' %}
     {% for label, messages in app.flashes %}
-    {% for message in messages %}
-    <div class="flash flash-{{ label }} show">
-        <div class="flash-close"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                class="bi bi-x-square-fill" viewBox="0 0 16 16">
-                <path
-                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
-            </svg></div>
-        <div class="flash-message">
-            {{ message }}
-        </div>
-    </div>
-    {% endfor %}
+        {% for message in messages %}
+            <div class="flash flash-{{ label }} show">
+                <div class="flash-close"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                    </svg></div>
+                <div class="flash-message">
+                    {{ message }}
+                </div>
+            </div>
+        {% endfor %}
     {% endfor %}
 </body>
 
