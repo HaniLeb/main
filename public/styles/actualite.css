@@ -102,11 +102,6 @@ main p {
   height: 150px;
 }
 
-.actualite-container > *:not(:last-child) {
-  border-bottom: 1px solid #303030;
-  padding-bottom: 20px;
-}
-
 .presse-container {
   margin: 20px 0;
 }
