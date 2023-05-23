@@ -17,13 +17,13 @@
         Nous sommes fiers de partager avec vous toutes les nouveautés et actualités de notre restaurant pour vous offrir une expérience inoubliable à chaque visite.</p>
     
     {% if is_granted('ROLE_ADMIN') %}
-      <a href="{{ path('app_logout') }}">Déconnexion</a>
+      <a class="btn-red" href="{{ path('app_logout') }}">Déconnexion</a>
     {% endif %}
 
     <section class="actualite-container">
 
       {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_actualite_create') }}">Nouvelle actualitée</a>
+        <a class="btn-green" href="{{ path('app_actualite_create') }}">Ajouter actualitée</a>
       {% endif %}
       
       {% for actualite in actualites %}
@@ -39,9 +39,9 @@
       {% if is_granted('ROLE_ADMIN') %}
         <form method="post" action="{{ path('app_actualite_delete', {"id": actualite.id}) }}">
           <input type="hidden" name="token" value="{{ csrf_token('actualite-' ~ actualite.id) }}">
-          <button type="submit">Supprimer</button>
+          <button class="btn-red" style="border: none;" type="submit">Supprimer</button>
         </form>
-        <a href="{{ path('app_actualite_edit', {"id": actualite.id}) }}">Modifier</a>
+        <a class="btn-yellow" href="{{ path('app_actualite_edit', {"id": actualite.id}) }}">Modifier</a>
       {% endif %}
       
     </div>
