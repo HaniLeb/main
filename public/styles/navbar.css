@@ -1,0 +1,145 @@
+/* Mobile */
+nav {
+  display: flex;
+  height: 7vh;
+}
+
+/* Icône burger */
+#navMobile {
+  display: block;
+  margin: auto 0;
+  margin-left: auto;
+  margin-right: 7%;
+}
+
+#openBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.burger-icon span {
+  display: block;
+  width: 45px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  border-radius: 15px;
+}
+
+/* Side nav */
+.sidenav {
+  height: 250px;
+  width: 200px;
+  border-radius: 15px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 10000px;
+  background-color: white;
+  padding-top: 30px;
+  transform: translate(-10%, 65px);
+  transition: left 0.5s ease;
+}
+
+.sidenav ul li {
+  padding: 10px 20px;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+  right: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 2.6rem;
+}
+
+#navDesktop,
+.logoTitle {
+  display: none;
+}
+
+/* Tablette */
+@media screen and (min-width: 500px) {
+  #navMobile {
+    display: none;
+  }
+
+  nav {
+    height: 13vh;
+  }
+
+  #navDesktop,
+  .logoTitle {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+
+  #navDesktop {
+    justify-content: space-around;
+  }
+
+  .logoTitle{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logoTitle h1{
+    font-size: 1.7rem;
+    width: 70%;
+  }
+
+  .logo {
+    width: 20%;
+  }
+
+  .logo img {
+    padding-left: 1rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1000px) {
+    nav {
+        height: 15vh;
+      }
+  #navDesktop {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  .logoTitle{
+    width: 50%;
+  }
+  
+  .logoTitle h1 {
+    font-size: 2.5rem;
+    width: 80%;
+  }
+
+  .logo {
+    width: 20%;
+  }
+
+  .logo img {
+    /* width: 40%; */
+  }
+}

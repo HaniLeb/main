@@ -13,31 +13,37 @@
 
 {% block body %}
     <section class="hero">
-        <div class="top">
-            <h1>Bienvenue sur le site de la paillote du Soleil</h1>
-            <a href="{{ path('app_reservations') }}" class="link">Réserver</a>
-        </div>
+        <span class="filter">
+            <div class="top">
+                <h1>La paillote du soleil votre nouveau chez vous !</h1>
+                <a href="{{ path('app_reservations') }}" class="btn-red">Réserver</a>
+            </div>
+        </span>
     </section>
 
     <main>
-        <section class="sect">
-            <div class="div1">Nos Actualités</div>
-            <a class="link" href="{{ path('app_actualite') }}">Nos Actualités</a>
-        </section>
+        <a class="sect" href="{{ path('app_actualite') }}">
+            <span class="bg-img bg1">
+                <h2 class="filter2">Actualités</h2>
+            </span>
+        </a>
 
-        <section class="sect">
-            <div class="div2">Nos Services</div>
-            <a class="link second" href="{{ path('app_services') }}">Nos Services</a>
-        </section>
+        <a class="sect" href="{{ path('app_services') }}">
+            <span class="bg-img bg2">
+                <h2 class="filter2">Services</h2>
+            </span>
+        </a>
 
-        <section class="sect">
-            <div class="div3">Notre Restaurant</div>
-            <a class="link" href="{{ path('app_restaurant') }}">Notre Restaurant</a>
-        </section>
+        <a class="sect" href="{{ path('app_restaurant') }}">
+            <span class="bg-img bg3">
+                <h2 class="filter2">Menu</h2>
+            </span>
+        </a>
 
-        <section class="sect">
-            <div class="div4">Réserver</div>
-            <a class="link last" href="{{ path('app_reservations') }}">Réserver</a>
-        </section>
+        <a class="sect" href="{{ path('app_reservations') }}">
+            <span class="bg-img bg4">
+                <h2 class="filter2">Réserver</h2>
+            </span>
+        </a>
     </main>
 {% endblock %}

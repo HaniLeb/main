@@ -1,31 +1,39 @@
 <footer>
-<section>
-  <div class="newsletter">
-    <p>Inscrivez-vous à notre <br> newsletter pour ne manquer <br> aucun actualité </p>
-    <form action="" method="POST">
-    <input type="text" placeholder="email@example.com">
-    <button type="submit">S'inscrire</button>
-    </form>
-    </div>
-  <section class="test">
-    <div class="menu">
-      <a href="{{ path('app_actualite') }}">Actualités</a>
-      <a href="{{ path('app_restaurant') }}">Restaurant</a>
-      <a href="{{ path('app_mentions_legales') }}">Mention Légales</a>
-    </div>    
-    <div class="menu1">
-      <a href="{{ path('app_services') }}">Services</a>
-      <a href="{{ path('app_reservations') }}">Reservation</a>
-      <a href="{{ path('app_cgu') }}">CGU/CGV</a>
+  <section class="navFooter">
+    <section class="infos">   
+      <div>
+        <p><a href="{{ path('app_reservations') }}">Réservation</a></p>
+        <p><a href="{{ path('app_restaurant') }}">Restaurant</a></p>
+        <p><a href="{{ path('app_services') }}">Nos Services</a></p>
+      </div>    
+      <div>
+        <p><a href="{{ path('app_actualite') }}">Nos Actualités</a></p>
+        <p><a href="{{ path('app_reservations') }}">Nous contacter</a></p>
+        <p><a href="{{ path('app_mentions_legales') }}">Mention Légales</a></p>
+      </div>
+      <div>
+        <p><a href="{{ path('app_cgu') }}">CGU/CGV</a></p>
+        <p><a href="{{ path('app_reservations') }}">Nous recutons</a></p>
+      </div>
+    </section>
+
+    <div class="newsletter">
+      <p>Inscrivez-vous à nos newsletter</p>
+      <form action="" method="POST">
+        <input type="text" placeholder="email@example.com">
+        <button type="submit">S'inscrire</button>
+      </form>
     </div>
   </section>
-</section>
-  <div class="logo">
+
+  <div class="logo-footer">
     <a href="{{ path('app_home') }}">
-      <img src="logo-no-background.png" alt="Logo"></a>
-      <h6>La Paillote du Soleil</h6>
+      <img src="/logo-white.svg" alt="Logo">
+    </a>
+			<h1><a class="title" href="{{ path('app_home') }}">La Paillote du Soleil</a></h1>
   </div>
-  <div class="copy">
+
+  <div class="copyright">
     <p>&copy;{{ "now"|date("Y") }} MSPR TEAM 1. All Rights Reserved</p>
   </div>
 </footer>
